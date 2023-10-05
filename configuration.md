@@ -1,5 +1,14 @@
 ## Configuring IRIS FUME plugin
 
+- [Configuring IRIS FUME plugin](#configuring-iris-fume-plugin)
+  - [Production component](#production-component)
+  - [FumeBusinessService component](#fumebusinessservice-component)
+  - [FumeTransformOperation component](#fumetransformoperation-component)
+  - [FumeStoreOperation component](#fumestoreoperation-component)
+  - [Development and customization of Production business processes using IRIS FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
+- [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
+
+
 ### Production component
 
 The production contains the following properties
@@ -126,3 +135,36 @@ For example, in the `Business Process` editor you can specify which FUME map sho
 ![Alt text](img/transform.png)
 
 If errors occur in the process of converting HL7 v2 format messages to FHIR format, they can be passed to another standard component that is responsible for receiving and storing erroneous HL7 ACK messages in the file system.
+
+
+## Configuring local IRIS FHIR server security
+
+If the plugin has been installed using ZPM installer and if a FHIR endpoint has been created by installer, please note that the newly created FHIR endpoint is not protected by HTTP security and allows unauthenticated users to access the endpoint.
+
+To secure the FHIR endpoint, do the following:
+* In the IRIS portal main menu, click the `Home` > `Health` menu item
+*  On the `Management portal` page, select the namespace which your FHIR endpoint belongs to (e.g. `FUME`)
+*  On the next page, click the `FHIR configuration` menu item and then click `Go` button
+*  On the `Intersystems FHIR` configuration page, click `Server configuration`
+*  On the `Server Configuration` page, select the endpoint you want to protect (e.g. /csp/healthshare/fume/fhir/r4) and expand the form
+*  Scroll down the page and click `Edit` button
+*  Uncheck the `Allow Unauthenticated Access` checkbox, then click `Update`
+
+![Alt text](img/disable-fhir-anon.png)
+
+On the next step, FumeStoreOperation component properties should be adjusted to allow the component communicate with the FHIR endpoint, as follows:
+
+* Navigate to FUME production page
+* Select the `FumeStoreOperation` component
+* Click the `Settings` tab
+* Scroll down and locate the `Credentials` dropdown list:
+![Alt text](img/credentials.png)
+* Click the `Details` button. The `Credentials Viewer` page will be opened
+* Register a new username/password pair for HTTP basic authentication. Both will be used to access IRIS FHIR endpoint:
+  ![Alt text](img/new-credentials.png)
+* Save the record and return back to the Production page.
+* Assign the newly created `Credentials` entry to the `FumeStoreOperation` component:
+
+![Alt text](img/secured-fume-store-op.png)
+
+* Click the `Apply` button

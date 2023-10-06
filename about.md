@@ -1,6 +1,6 @@
 # About FHIR Out Of The Box
-The FHIR Out of the Box is an integrated solution between InterSystems IRIS / HealthShare Health Connect and Outburn FUME transformation engine. The solution is 
-providing a robust framework for organizations aimed to deploy FHIR-based solutions. 
+
+FHIR® Out-of-the-Box is a comprehensive solution combining InterSystems's IRIS and  HealthShare Health Connect integration capabilities with FUME, a powerful FHIR® Converter by Outburn LTD. The solution provides the capability for efficiently transforming messages between HL7v2, CSV, and FHIR®, facilitating healthcare interoperability.  
 
 **InterSystems IRIS** is a complete data platform that makes building and deploying high-performance applications
 that connect medical data easier. InterSystems IRIS provides several libraries implementing the most popular medical standards – HL7 v2, HL7 FHIR, HL7, EDI, X12, and others. 

@@ -16,5 +16,4 @@ and most importantly - without requiring any programming knowledge or experience
 
 To know more, please visit the following website: https://www.fume.health/
 
-**IRIS FUME plugin** provides seamless integration between the InterSystems IRIS/HealthShare Health Connect server and any other medical or clinical system
-that is a medical data source in HL7 v2, CSV, and JSON formats via FUME.
+**IRIS FUME plugin** provides seamless integration between the InterSystems IRIS/HealthShare Health Connect, InterSystems or external FHIR Server and any other medical or clinical system that is a medical data source in HL7 v2, CSV, and JSON formats via FUME.

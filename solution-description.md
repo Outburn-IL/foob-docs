@@ -2,9 +2,9 @@
 
 **InterSystems IRIS** exposes the following core components: 
 
-* FHIR storage
+* FHIR repository
 * FHIR endpoint
-* IRIS production. 
+* IRIS production 
 
 **IRIS FHIR storage** is a high-performance database designed for effective FHIR data querying and processing. 
 

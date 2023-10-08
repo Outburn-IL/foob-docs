@@ -27,16 +27,15 @@ In current release, the editor supports HL7 v2 and JSON formats.
 •	Modify rule settings (rule name, rule priority, rule expression and others)
 •	Click the `Save` button to apply changes
 
-## IRIS FUME Plugin conversion tester
+## IRIS FUME Plugin HL7 conversion tester
 
-This is another web application which allows a user to perform online testing of FUME mappings and IRIS routing rules.
+This is another web application which allows a user to perform online testing of FUME HL7 V2 mappings and IRIS routing rules.
 
 ![Alt text](img/conversion-tester.png)
  
 In order to perform testing, follow these steps:
 * Open the main page of the IRIS FUME Plugin client application
-* Click the `Conversion tester` main menu item
-* Choose which data conversion you want to test (HL7 v2, JSON or CSV)
+* Click the `HL7 Conversion tester` main menu item
 * Paste the source data from the clipboard into the upper text box. Alternatively, click the `Load...` button to load a file from your hard disk
 * Click the `Convert` button to upload your test data to the IRIS server
 * The results of the transformation will be displayed in the bottom pane of the page.

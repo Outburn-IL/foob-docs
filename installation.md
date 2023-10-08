@@ -1,5 +1,10 @@
-# Installing IRIS FUME plugin
+# Installing IRIS FHIR out of the BOX (FOOB)
 
+The FOOB installer supports different platforms and workflow scenarios and can be adapted to organizational needs as follows:
+ - Existing IRIS with FHIR Repository
+ - Existing IRIS without FHIR Repository when FHIR Repository is intended to be deployed as a part of the IRIS platform. 
+ - Existing IRIS with 3rd party FHIR Server
+   
 We recommend using the ZMP (IPM) package manager to install the plugin. 
 
 If ZPM is not installed on your server yet, install it according to the instructions on the official [IRIS ZPM (IPM) package manager page](https://github.com/intersystems/ipm).

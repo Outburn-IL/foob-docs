@@ -29,7 +29,7 @@ In current release, the editor supports HL7 v2 and JSON formats.
 
 ## IRIS FUME Plugin HL7 conversion tester
 
-This is another web application which allows a user to perform online testing of FUME HL7 V2 mappings and IRIS routing rules.
+This is another web application that allows a user to perform online testing of FUME HL7 V2 mappings and IRIS routing rules.
 
 ![Alt text](img/conversion-tester.png)
  

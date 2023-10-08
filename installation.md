@@ -59,4 +59,6 @@ $ sudo ufw allow 9980
 zpm:FUME> repo -r -n registry -reset-defaults
 ```
 Package uninstallation can be done using  the following command:  
+```shell
 zpm:FUME: uninstall iris-fume-plugin
+```

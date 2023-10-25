@@ -3,6 +3,7 @@
 - [Configuring IRIS FUME plugin](#configuring-iris-fume-plugin)
   - [Production component](#production-component)
   - [FumeBusinessService component](#fumebusinessservice-component)
+  - [IRIS FUME plugin REST service](#iris-fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
   - [Development and customization of Production business processes using IRIS FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
@@ -71,6 +72,19 @@ The component exposes the following properties:
 |Port|Specifies the TCP port which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
 |BusinessProcess|Specifies the name of a Business Process component to which the data streams should be redirected|
 |Charset|Specifies the character encoding of incoming text streams. Default value is `UTF-8`. Normally this setting value should never be changed.|
+
+### IRIS FUME plugin REST service
+
+IRIS FUME plugin also provides a REST service which exposes the following endpoints:
+- /csp/healthshare/${namespace}/rest/json
+- /csp/healthshare/${namespace}/rest/csv
+- /csp/healthshare/${namespace}/rest/hl7
+
+These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
+
+For security reasons, we recommend using the REST service as the main service rather then the FumeBusinessService component. 
+
+To completely disable the FumeBusinessService component, just set its PoolSize property value to 0.
 
 ### FumeTransformOperation component
 

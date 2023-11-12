@@ -17,11 +17,8 @@ If ZPM is not installed on your server yet, install it according to the instruct
    
 > Installation procedure:
 1.	Open InterSystems IRIS for Health terminal
-2.	
-
-3.	Authenticate yourself using your credentials
-
-4.	Don’t forget to switch the namespace:
+2.	Authenticate yourself using your credentials
+3. switch the namespace to the target one where FUME Plugin will be installed
 ```shell
 %SYS> zn "FUME"
 FUME>

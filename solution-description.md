@@ -5,6 +5,6 @@ The general workflow diagram is represented in the diagram below:
 
 ![Alt text](img/Fume-plugin-dataflow.png)
 
-The  IRIS production accepts a message over the exposed REST endpoint and passes the message to the Intersystems FUME  plugin Business Service. Intersystems FUME plugin forwards a message to an instance of FUME service along with the conversion map (for further information, please review FUME documentation). The  FUME service transforms data and returns an FHIR resource (or a collection of separate FHIR resources packed in an FHIR Bundle, depending on the conversion map) to IRIS production. Finally, IRIS production submits FHIR data to its internal storage.
+The  IRIS production accepts a message over the exposed REST endpoint and passes the message to the Intersystems FUME  plugin Business Service. Intersystems FUME plugin forwards a message to the exposed FUME engine REST API along with the conversion map (for more information about the Outburn FUME conversion engine, please review FUME documentation). The  FUME service transforms the data and returns an FHIR resource (or a collection of separate FHIR resources packed in an FHIR Bundle, depending on the conversion map) to IRIS production. Finally, IRIS production submits FHIR data to the FHIR Server (internal IRIS FHIR repository or external FHIR Server) according to the pre-defined rules based on the FHIR resource type.
 
 

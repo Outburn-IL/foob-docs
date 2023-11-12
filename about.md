@@ -4,7 +4,7 @@
 
 The solution is required the following products: 
 
-**InterSystems IRIS / HealthShare Health Connect ** is a complete data platform that makes building and deploying high-performance applications
+**InterSystems IRIS / HealthShare Health Connect** is a complete data platform that makes building and deploying high-performance applications
 that connect medical data easier. InterSystems IRIS provides several libraries implementing the most popular medical standards – HL7 v2, HL7 FHIR, HL7, EDI, X12, and others. 
 InterSystems IRIS provides a high-performant and secured data storage for each type of medical message and medical document. 
 Finally, true medical data interoperability is provided by the IRIS standard library.

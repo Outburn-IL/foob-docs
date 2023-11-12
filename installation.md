@@ -12,7 +12,7 @@ If ZPM is not installed on your server yet, install it according to the instruct
 
 > Prerequisites:
 1. The Outburn FUME Conversion engine is installed on the server accessible by IRIS, and the FUME Rest API is exposed.
-   #!Important note!#  Just in case the FUME instance will use as a Conformance Resource repository, the new IRIS FHIR repository, which hasn't been created yet, the     recommendation is to complete FUME configuration after 3rd step of FUME Plugin installation.   
+   ##!Important note!##  Just in case the FUME instance will use as a Conformance Resource repository, the new IRIS FHIR repository, which hasn't been created yet, the     recommendation is to complete FUME configuration after 3rd step of FUME Plugin installation.   
     install FUME   
 3. ZPM is installed on the target IRIS server.
 4. Target namespace and database were created (if required)

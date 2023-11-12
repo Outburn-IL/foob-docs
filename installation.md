@@ -10,12 +10,14 @@ The installer supports different platforms and workflow scenarios and can be ada
 
 If ZPM is not installed on your server yet, install it according to the instructions on the official [IRIS ZPM (IPM) package manager page](https://github.com/intersystems/ipm).
 
-> Prerequisites: 
+> Prerequisites:
+>>The Outburn FUME Conversion engine is installed on the server accessible by IRIS, and the FUME Rest API is exposed.
+>>ZPM is installed on the target IRIS server.
+>>Target namespace and database were created (if required)
+> Installation procedure:
 
-When ZPM is ready, follow these steps:
-1.	Prepare a clean namespace and a database where the FUME plugin should be installed.
-
-2.	Open InterSystems IRIS for Health terminal
+1.	Open InterSystems IRIS for Health terminal
+2.	
 
 3.	Authenticate yourself using your credentials
 

@@ -9,8 +9,6 @@ The following aspects were taken into account during the solution design:
 **Simplicity:** Minimum Object Script coding needs by developing integration-ready components and automatic solution deployment using ZPM installer.
 
 **Flexibility:** The solution can quickly adapt to any S2T workflow on the customer site by using pre-developed IRIS components
-![image](https://github.com/Outburn-IL/foob-docs/assets/86924495/1a15cb66-4de2-4e1f-87bf-443db08306a2)
-
 
 The solution is based on the following products: 
 

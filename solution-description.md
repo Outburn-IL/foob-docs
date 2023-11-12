@@ -9,6 +9,10 @@ The  IRIS production accepts a message over the exposed REST endpoint and passes
 
 The high-level architecture is shown in the diagram below:
 
+![Alt text](img/Fume-plugin-general-architecture.png)
+
+
+
 
 
 

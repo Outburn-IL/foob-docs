@@ -2,14 +2,6 @@
 
 **Intersystems FUME Plugin** is a comprehensive solution, enabling InterSystems's IRIS and HealthShare Health Connect seamless integration capabilities with FUME, a powerful FHIR Converter by Outburn. The solution can efficiently convert JSON, HL7v2, and  CSV source messages to FHIR®, facilitating healthcare interoperability. 
 
-The following aspects were taken into account during the solution design:
-
-**Functionality:**  The solution supports various data types conversion to FHIR using pre-defined IRIS classes seamlessly integrated with FUME. The IRIS developer/integrator will be capable of building and adapting default solutions to the target workflow according to the business requirements.
-
-**Simplicity:** Minimum Object Script coding needs by developing integration-ready components and automatic solution deployment using ZPM installer.
-
-**Flexibility:** The solution can quickly adapt to any S2T workflow on the customer site by using pre-developed IRIS components
-
 The solution is based on the following products: 
 
 **InterSystems IRIS / HealthShare Health Connect** is a complete data platform that makes building and deploying high-performance applications
@@ -23,5 +15,15 @@ you will achieve it - so you can get quality outcomes in a fraction of the time 
 and most importantly - without requiring any programming knowledge or experience. 
 
 To know more, please visit the following website: https://www.fume.health/
+
+The following aspects were taken into account during the solution design:
+
+**Functionality:**  The solution supports various data types conversion to FHIR using pre-defined IRIS classes seamlessly integrated with FUME. The IRIS developer/integrator will be capable of building and adapting default solutions to the target workflow according to the business requirements.
+
+**Simplicity:** Minimum Object Script coding needs by developing integration-ready components.
+
+**Flexibility:** The solution can quickly adapt to any S2T workflow on the customer site by using pre-developed IRIS components.
+
+
 
 

@@ -3,8 +3,7 @@
 The **Intersystems FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated FUME Conversion engine. 
 The general workflow is the following IRIS production accepts a message and passes the message to the IRIS FUME plugin. IRIS FUME plugin forwards a message to an instance of FUME service. FUME service transforms data and returns an FHIR resource (or a collection of separate FHIR resources packed in an FHIR Bundle) to IRIS production. Finally, IRIS production submits FHIR data to its internal storage.
 
-
-[img/Fume plugin dataflow.png]
+![Alt text](img/Fume plugin dataflow.png)
 
 
 **InterSystems IRIS** exposes the following core components: 

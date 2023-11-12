@@ -15,7 +15,7 @@ The  IRIS production accepts a message over the exposed REST endpoint (default m
 4. FUMETransformOperation Business Operation class allowing "One click" based  FUME integration and conversion map configuration from the Production           Configuration page. 
 5. FUMEStoreOperation Business Operation class allows the interaction with the FHIR Server (internal IRIS FHIR  repository or external FHIR Server) and provides automatic REST call construction depending on the FHIR resource type/structure received from FUME. 
 6. FUMEBusinessProcess allows entire solution workflow management according to the business requirements. The BP is capable of managing FUME conversion map calls in addition or instead of FUMETransformOperation, registration of additional components, and coordination of the data flow.
-7. FUME plugin HL7 V2 Web-based UI, allowing HL7 V2 conversion management by configuring specially designed, FUME-based routing rules
+7. FUME plugin Web-based UI, allowing HL7 V2 to FHIR conversion management by configuring specially designed, FUME-based routing rules
 
 
 

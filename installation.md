@@ -47,11 +47,11 @@ zpm:FUME> install -dev iris-fume-plugin
 3. The installer will propose a default endpoint. Please confirm or change. 
 4. Proivde FUME REST endpoint URL
 5. Proivde FUME Designer URL
-6. The install will propose a default port for FumeBusinessService HTTP Adapter. Please confirm or change
+6. The installer will propose a default port for FumeBusinessService HTTP Adapter. Please confirm or change
 
 Installation Completed! 
 
-> Post installation steps
+> Post-installation steps
 
 1. Check if a production with the name `Outburn.FumeNativeProduction.FumeProduction` exists. You should see the following:
 

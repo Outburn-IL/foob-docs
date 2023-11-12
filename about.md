@@ -20,11 +20,11 @@ To know more, please visit the following website: https://www.fume.health/
 
 > The following aspects were taken into account during the solution design:
 
-*Functionality:*  The solution supports various data types conversion to FHIR using pre-defined IRIS classes seamlessly integrated with FUME. The IRIS developer/integrator can build and adapt default solutions to the target workflow according to the business requirements. The solution includes an integrated Web-based UI providing complete HL7 V2 to FHIR conversion workflow management.
+>> *Functionality:*  The solution supports various data types conversion to FHIR using pre-defined IRIS classes seamlessly integrated with FUME. The IRIS developer/integrator can build and adapt default solutions to the target workflow according to the business requirements. The solution includes an integrated Web-based UI providing complete HL7 V2 to FHIR conversion workflow management.
 
-*Simplicity:* Minimum Object Script coding needs by developing integration-ready components and automatic solution deployment using a ZPM installer-based wizard adapted to various implementations on the customer site.
+>> *Simplicity:* Minimum Object Script coding needs by developing integration-ready components and automatic solution deployment using a ZPM installer-based wizard adapted to various implementations on the customer site.
 
-*Flexibility:* The solution can quickly adapt to any S2T workflow on the customer site using pre-developed classes and UI-based configuration capabilities. 
+>> *Flexibility:* The solution can quickly adapt to any S2T workflow on the customer site using pre-developed classes and UI-based configuration capabilities. 
 
 
 

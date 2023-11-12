@@ -1,16 +1,19 @@
-# Installing IRIS FHIR out of the BOX (FOOB)
+# Installing Intersystems FUME Plugin
 
-The IRIS FUME Plugin installer supports different platforms and workflow scenarios and can be adapted to organizational needs as follows:
- - Existing IRIS with FHIR Repository
- - Existing IRIS without FHIR Repository when FHIR Repository is intended to be deployed as a part of the IRIS platform. 
- - Existing IRIS with 3rd party FHIR Server
-   
-We recommend using the ZMP (IPM) package manager to install the plugin. 
+The FUME Plugin installation is possible using ZPM (IPM) package manager.
+
+The installer supports different platforms and workflow scenarios and can be adapted to new and existing IRIS implementations. Supported scenarios are:
+ -  Existing IRIS or HealthShare Health Connect with FHIR Repository
+ -  Existing IRIS or HealthShare Health Connect  without FHIR Repository when FHIR Repository is intended to be deployed as a part of the IRIS platform. 
+ -  Existing IRIS or HealthShare Health Connect with 3rd party FHIR Server
+ -  New IRIS or HealthShare Health Connect installation
 
 If ZPM is not installed on your server yet, install it according to the instructions on the official [IRIS ZPM (IPM) package manager page](https://github.com/intersystems/ipm).
 
+> Prerequisites: 
+
 When ZPM is ready, follow these steps:
-1.	Prepare a clean namespace and a database where IRIS FUME plugin should be installed to (e.g. `FUME`)
+1.	Prepare a clean namespace and a database where the FUME plugin should be installed.
 
 2.	Open InterSystems IRIS for Health terminal
 

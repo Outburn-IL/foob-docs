@@ -51,6 +51,8 @@ Text data is expected to be transmitted in the UTF-8 encoding by default, but yo
 ```text
 Content-Type: text/csv,charset=windows-1252  
 ```
+**FUMEBusinessService Settings**
+![Alt text](img/production-settings.png)
 
 **FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab.
 

@@ -2,13 +2,19 @@
 
 The **InterSystems FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated Outburn FUME Conversion engine. 
 
-The **FUME** is available in two versions: **Community and Enterprise**. The IRIS plugin supports both of them. The table below represents the main differences between them:
+The **FUME** is available in two versions: **Community and Enterprise**. The table below represents the main differences between them:
 
 |Feature | FUME Community | FUME Enterprise |
 |---------|-------------|---------------|
-| Run transformations using RESTful API|V|V|
-| Full HL7v2 terminology dictionaries|V|V|
+|Run transformations using RESTful API|V|V|
+|Full HL7v2 terminology dictionaries|V|V|
 |Use resources (Profiles, Extensions, ConceptMaps) stored on the FHIR® server|V|V|
+|Flexible deployment options (cloud-based or on-prem, Docker compatible)|V|V|
+|Import external packages|V|V|
+|Browse, open, edit, and save FUME mappings|X|V|
+|Mapping Designer (GUI)|X|V|
+
+The **IRIS FUME Plugin** is 
 
 
 

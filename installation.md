@@ -57,7 +57,7 @@ Installation Completed!
 
 ![Alt text](img/production.png)
  
-2. Check if a CSP application (Web UI) at URL `http://<iris_host>:<iris_port>/csp/healthshare/fume` is available
+2. Check if a CSP application (Web UI) at URL `http://<iris_host>:<iris_port>/csp/healthshare/<namespace>fume/index.html` is available
 3.	Finally, don’t forget switch ZPM back to the community repository:
 
 ```shell

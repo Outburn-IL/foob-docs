@@ -2,6 +2,11 @@
 
 IRIS FUME Plugin routing rules editor is a web application that runs on the InterSystems IRIS web server. The application allows users to design and test their own medical data conversion and routing rules for the FUME service on the InterSystems IRIS platform.
 
+The application is available at the following URL:
+* /csp/healthshare/{namespace}/fume/index.html
+
+Here, the {namespace} variable should match your namespace (e.g. /csp/healthshare/clinic1/fume/index.html)
+
 ![IRIS FUME plugin routing rules editor](img/routing-rules-editor.png)
  
 Before using the editor, you must develop and register some mappings using the FUME designer. 

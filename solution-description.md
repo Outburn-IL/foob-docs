@@ -2,35 +2,38 @@
 
 The **InterSystems FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated **Outburn FUME Conversion engine**. 
 
-**The following section will explore Intersystems FUME Plugin solution components, deployment methods, and high-level dataflow**
+**The following sections will explore Intersystems FUME Plugin solution components, deployment methods, and high-level dataflow definition**
 
 > FUME versions and components: 
 
 The  **FUME** architecture is comprised of the following components: 
-1. The FUME mapping engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR StructureMaps resources. The FUME engine may use the same FHIR Server as the production one for managing organizational resources or an independent one. The IRIS FUME Plugin does not currently support the stateless mode.
-2. The FUME mapping designer is a part of 
+1. The **FUME mapping engine** is the core of the FUME FHIR® conversion and interoperability solution. The FUME engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR StructureMaps resources. The FUME engine may use the same FHIR Server as the production one for managing organizational resources or an independent one. 
+2. The **FUME mapping designer** is a flexible and interactive FHIR® mapper providing the capability for creating and managing conversion maps.
 
 The **FUME** is available in two versions: **Community and Enterprise**. The table below represents the main differences between them:
 
 |Feature | FUME Community | FUME Enterprise |
 |---------|-------------|---------------|
+|**Open-Source**|V|X|
 |Run transformations using RESTful API|V|V|
 |Full HL7v2 terminology dictionaries|V|V|
 |Use resources (Profiles, Extensions, ConceptMaps) stored on the FHIR® server|V|V|
 |Flexible deployment options (cloud-based or on-prem, Docker compatible)|V|V|
 |Import external packages|V|V|
-|Browse, open, edit, and save FUME mappings|X|V|
-|Mapping Designer (GUI)|X|V|
+|**Browse, open, edit, and save FUME mappings**|X|V|
+|**Mapping Designer** (GUI)|X|V|
 
-The **IRIS FUME Plugin** is 
-
-
-
+Visit the following page for the complete list of feature comparisons: [https://outburn.co.il/discover-your-perfect-fume-match/]
 The FUME conversion and transformation engine Community Edition can be downloaded from the Outburn GitHub repository: [https://github.com/Outburn-IL/fume-community]
+
+
+In addition, the free, **FUME Playground** free designer Sandbox [https://try.fume.health/] provides the capability for creating maps and move them into the Community FUME for further usage of  **FUME mapping engine** using the procedure below: 
+
+> FUME Conversion map, PlayGround -> FUME Community deployment procedure
 
 > Dataflow
 
-The general data workflow is represented in the diagram below:
+The high-level dataflow is represented in the diagram below:
 
 ![Alt text](img/Fume-plugin-dataflow.png)
 

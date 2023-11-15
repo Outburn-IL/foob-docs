@@ -2,6 +2,8 @@
 
 The **InterSystems FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated **Outburn FUME Conversion engine**. 
 
+**The following section will explore Intersystems FUME Plugin solution components, deployment methods, and high-level dataflow**
+
 > FUME versions and components: 
 
 The  **FUME** architecture is comprised of the following components: 
@@ -25,7 +27,8 @@ The **IRIS FUME Plugin** is
 
 
 The FUME conversion and transformation engine Community Edition can be downloaded from the Outburn GitHub repository: [https://github.com/Outburn-IL/fume-community]
-The FUME 
+
+> Dataflow
 
 The general data workflow is represented in the diagram below:
 
@@ -33,7 +36,9 @@ The general data workflow is represented in the diagram below:
 
 The  IRIS production accepts a message over the exposed REST endpoint (default method)  and passes the message to the Intersystems FUME  plugin Business Service. Intersystems FUME plugin forwards a message to the FUME engine REST API along with the conversion map. The conversion map selection depends on the deployed workflow on site and supports various configurations, starting from static FUME conversion map configuration for each incoming message up to complex Routing Rules configuration supported by FUME Plugin HL7 V2 Web UI. The FUME service transforms the data and returns an FHIR resource (or a collection of separate FHIR resources packed into an FHIR Bundle, depending on the conversion map) to IRIS production. Finally, IRIS production submits FHIR data to the FHIR Server (internal IRIS FHIR repository or external FHIR Server) according to the pre-defined rules based on the FHIR resource type.
 
-> The InterSystems FUME plugin comprised the following main features and default modules:
+> InterSystems FUME Plugin components and features
+
+The InterSystems FUME plugin comprised the following main features and default modules:
 
 1. ZPM package installer supporting various platforms, implementation scenarios, and configuration options.
 2. IRIS FUME Plugin Rest Service supporting source messages accepting in the following formats: JSON,CSV,HL7 V2.

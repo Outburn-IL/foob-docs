@@ -91,11 +91,11 @@ To completely disable the FumeBusinessService component, just set its PoolSize p
 
 ### FumeTransformOperation component
 
-This component is responsible for the direct transformation of messages of types `FumeHL7Request`, `FumeCSVRequest` and `FumeJSONRequest` into HL7 FHIR format messages (Bundle or other resource types) using the FUME transformer.
+This component is responsible for the direct transformation of messages of types `FumeHL7Request`, `FumeCSVRequest` and `FumeJSONRequest` into HL7 FHIR format messages (Bundle or other resource types) using the FUME conversion engine.
 
-If the Production contains multiple instances of the component, all they will share the same FUME server as a medical data transformation service. The URL of FUME service endpoint is a property of Production. If you want to change the FUME service URL endpoint, please follow the instructions described in the chapter Production component.
+If the Production contains multiple instances of the component, all they will share the same FUME server as a medical data transformation service. The URL of FUME service endpoint is a property of Production. If you want to change the FUME service URL endpoint, please follow the instructions described in the chapter Production Component.
 
-To configure the component, register a new business operation of type `FumeTransformOperation` in Production, and then specify the following parameters:
+To configure the component, register a new business operation of type `FumeTransformOperation` in Production and then specify the following parameters:
 
 |Property | Description |
 |---------|-------------|

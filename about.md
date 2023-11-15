@@ -9,12 +9,11 @@ that connect medical data more efficiently. InterSystems IRIS provides several l
 InterSystems IRIS provides high-performing and secured data storage for each type of medical message and document. 
 Finally, true medical data interoperability is provided by the IRIS standard library.
 
-**FUME** is an FHIR conversion and transformation engine that enables data analysts to express FHIR-related data conversions in an easy, 
-compact, and expressive syntax. FUME allows you to focus on what you want to achieve rather than the technical details of how 
+**FUME** - "FHIR Utilized Mapping Engine" is an FHIR conversion and transformation engine that enables data analysts to express FHIR-related data conversions in an easy, compact, and expressive syntax. FUME allows you to focus on what you want to achieve rather than the technical details of how 
 you will achieve it - so you can get quality outcomes in a fraction of the time it takes with other tools, 
 and most importantly - without requiring any programming knowledge or experience. 
 
-Please visit the following website for further information about the FUME Conversion and Transformation engine.: [https://outburn.co.il/fhir-converter/]
+Please visit the following website for further information about the FUME Conversion and Transformation engine: [https://outburn.co.il/fhir-converter/]
 
 
 **FHIR Server** is a software application that implements the FHIR specification. It provides functionalities to interact with healthcare data using FHIR resources. This includes capabilities for creating, reading, updating, and deleting (CRUD) healthcare data resources. FHIR servers often support interactions through standard HTTP methods (GET, POST, PUT, DELETE) and utilize FHIR-defined operations. The InterSystems FHIR plugin supports the Internal FHIR repository and External FHIR Server.

@@ -49,7 +49,7 @@ Text data is expected to be transmitted in the UTF-8 encoding by default, but yo
 **Example:**
 
 ```text
-Content-Type: text/csv,charset=windows-1252  
+Content-Type: text/csv;charset=windows-1252  
 ```
 **FUME Settings**  
 
@@ -79,15 +79,19 @@ The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes ar
 ### IRIS FUME plugin REST service
 
 IRIS FUME plugin also provides a REST service which exposes the following endpoints:
-- /csp/healthshare/${namespace}/rest/json
-- /csp/healthshare/${namespace}/rest/csv
-- /csp/healthshare/${namespace}/rest/hl7
+- /csp/healthshare/{namespace}/rest/json/{fumeMap?}
+- /csp/healthshare/{namespace}/rest/csv/{fumeMap?}
+- /csp/healthshare/{namespace}/rest/hl7/{fumeMap?}
+
+In this example:
+* The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
+* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. It is optional.
 
 These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
 
 For security reasons, we recommend using the REST service as the main service rather then the FumeBusinessService component. 
 
-To completely disable the FumeBusinessService component, just set its PoolSize property value to 0.
+To disable the FumeBusinessService component, just set its PoolSize property value to 0. Also you can completely remove that component from your production.
 
 ### FumeTransformOperation component
 

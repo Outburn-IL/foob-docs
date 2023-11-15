@@ -95,7 +95,8 @@ This component is responsible for the direct transformation of messages of types
 
 The component uses the FUMEEnpoint setting available within the Production Settings to establish FUME REST Calls using predefined syntax supported by the FUME engine. If you'd like to change the FUME service URL endpoint, please follow the instructions included in the chapter Production Component. If the Production contains multiple instances of the component, all of them will share the same FUME server as a healthcare data transformation service.
 
-The solution comes with the preregistered instance of FumeTransformOperation capable of calling the FUME engine in the context of one conversion map only. 
+The solution comes with the preregistered instance of FumeTransformOperation capable of calling the FUME engine in the context of one conversion map only.  
+
 The single instance of the FumeTransformOperation exposes the following main settings:
 
 |Property | Description |

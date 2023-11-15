@@ -121,15 +121,15 @@ If the transformation process is completed with an error, the component writes a
 
 ### FumeStoreOperation component
 
-This component is responsible for saving a message of type `FumeStoreRequest` on a FHIR server. Messages of this type contain a nested resource in the HL7 FHIR format. 
+This component is responsible for submitting a message of type `FumeStoreRequest` to the endpoint of the FHIR server (Internal FHIR Repository or External FHIR Server). Messages of this type contain a nested resource in the FHIR format. 
 
-If the saving of the FHIR resource completed successfully, the component logs a response message of type `FumeStoreResponse` in the IRIS Messages log and returns the message to the client in JSON format. 
+The FumeStoreOperation component uses different approaches when submitting FHIR data to the FHIR server. If the FHIR resource contains a valid logical id (Resource.id), it will be saved using HTTP PUT method; otherwise, it will be submitted using HTTP POST. This will allow you to keep so-called FHIR client-assigned IDs.The default method applied on the Transaction or Batch Bundles is POST. 
+
+In case the REST operation applied on the FHIR resource is completed successfully, the component logs a response message of type `FumeStoreResponse` in the IRIS Messages log and returns the message to the client in JSON format. 
 
 The `FumeStoreResponse` message has a `Location` property that contains the URL of the saved FHIR resource. In some cases, this field can be empty - for example, if the resource is submitted to the FHIR server as a transactional or batch Bundle.
 
 In case of an error, the component writes an error message to the IRIS Messages log.
-
-Please note, that the FumeStoreOperation component uses different approaches when submitting FHIR data to the FHIR server. If the FHIR resource contains a valid identifier (Resource.id), it will be saved using HTTP PUT method, otherwise it will be submitted using HTTP POST. This will allow you to keep so-called FHIR client-assigned IDs.
 
 In addition, the full protocol of data exchange with the FUME server will be also written to the IRIS Messages log.
 
@@ -139,9 +139,11 @@ The component exposes the following properties:
 
 |Property | Description |
 |---------|-------------|
+| FHIRHTTPService| The identifier of the External HTTP service which should be registered to communicate with a FHIR server|
 | SSLConfig |  The name of an existing SSL/TLS system configuration set to use for communication with a FHIR server |
 | SSLCheckServerIdentity | This option should be disabled only in debugging mode, if your FHIR server instance is protected by a self-signed SSL certificate|
-| FHIRHTTPService| The identifier of the External HTTP service which should be registered to communicate with a FHIR server|
+
+
 
 ### Development and customization of Production business processes using IRIS FUME Plugin components
 

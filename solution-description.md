@@ -44,11 +44,11 @@ The  IRIS production accepts a message over the exposed REST endpoint (default m
 
 > InterSystems FUME Plugin components and features
 
-The InterSystems FUME plugin comprised the following main features and default modules:
+The InterSystems FUME plugin comprised the following main features and default components:
 
 1. ZPM package installer supporting various platforms, implementation scenarios, and configuration options.
-2. IRIS FUME Plugin Rest Service supporting source messages accepting in the following formats: JSON,CSV,HL7 V2.
-3. IRIS FUME Plugin HTTP Business Service supporting source messages accepting  in the following formats: JSON,CSV,HL7 V2
+2. FUME Plugin Rest Service supporting source messages accepting in the following formats: JSON,CSV,HL7 V2.
+3. FUMEBusinessService HTTP Adapter based Business Service supporting source messages accepting  in the following formats: JSON,CSV,HL7 V2
 4. FUMETransformOperation Business Operation class allowing "One click" based  FUME integration and conversion map configuration from the Production           Configuration page. 
 5. FUMEStoreOperation Business Operation class allows the interaction with the FHIR Server (internal IRIS FHIR  repository or external FHIR Server) and provides automatic REST call construction depending on the FHIR resource type/structure received from FUME. 
 6. FUMEBusinessProcess allows entire solution workflow management according to the business requirements. The BP is capable of managing FUME conversion map calls in addition or instead of FUMETransformOperation, registration of additional components, and coordination of the data flow.

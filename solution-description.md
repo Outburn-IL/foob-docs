@@ -7,7 +7,7 @@ The **InterSystems FUME plugin** is a specialized IRIS production whose primary 
 > FUME versions and components: 
 
 The  **FUME** architecture is comprised of the following components: 
-1. The **FUME mapping engine** is the core of the FUME FHIR® conversion and interoperability solution. The FUME engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR StructureMaps resources. The FUME engine may use the same FHIR Server as the production one for managing organizational resources or an independent one. 
+1. The **FUME mapping engine** is the core of the FUME FHIR® conversion and interoperability solution. The FUME engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR ConformanceResources resources. The FUME engine shall use the FHIR Server for managing ConformanceResources.We recommended using the IRIS FHIR Repository as a FUME backend; however, any FHIR Server can be used. The FUME Engine can be operated in Stateless mode with no FHIR Server; however, the FUME Plugin solution does not support it
 2. The **FUME mapping designer** is a flexible and interactive FHIR® mapper providing the capability for creating and managing conversion maps.
 
 The **FUME** is available in two versions: **Community and Enterprise**. The table below represents the main differences between them:
@@ -24,16 +24,17 @@ The **FUME** is available in two versions: **Community and Enterprise**. The tab
 |**Mapping Designer** (GUI)|X|V|
 
 Visit the following page for the complete list of feature comparisons: [https://outburn.co.il/discover-your-perfect-fume-match/]
+
 The FUME conversion and transformation engine Community Edition can be downloaded from the Outburn GitHub repository: [https://github.com/Outburn-IL/fume-community]
 
+In addition, the free, **FUME Playground** free designer Sandbox [https://try.fume.health/] provides the capability for creating maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. Please use the following procedure for importing FUME Conversion maps created using Playground into the FUME Community Version
 
-In addition, the free, **FUME Playground** free designer Sandbox [https://try.fume.health/] provides the capability for creating maps and move them into the Community FUME for further usage of  **FUME mapping engine** using the procedure below: 
-
-> FUME Conversion map, PlayGround -> FUME Community deployment procedure
+> FUME maps export-import procedure:
+Here is coming procedure
 
 > Dataflow
 
-The high-level dataflow is represented in the diagram below:
+The high-level data-flow is represented in the diagram below:
 
 ![Alt text](img/Fume-plugin-dataflow.png)
 

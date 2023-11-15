@@ -135,14 +135,20 @@ In addition, the full protocol of data exchange with the FUME server will be als
 
 To register the component, create a new Business Operation of type  `Outburn.Fume.NativeProduction.BusinessOperation.FumeStoreOperation` and give it any name (e.g. FumeStoreOperation)
 
-The component exposes the following properties:
+The component exposes the following main properties:
 
 |Property | Description |
 |---------|-------------|
 | FHIRHTTPService| The identifier of the External HTTP service which should be registered to communicate with a FHIR server|
+
+![Alt text](img/businesprocess-fume-store-settings.png)
+
+The component exposes the following additional properties:
+
+|Property | Description |
+|---------|-------------|
 | SSLConfig |  The name of an existing SSL/TLS system configuration set to use for communication with a FHIR server |
 | SSLCheckServerIdentity | This option should be disabled only in debugging mode, if your FHIR server instance is protected by a self-signed SSL certificate|
-
 
 
 ### Development and customization of Production business processes using IRIS FUME Plugin components

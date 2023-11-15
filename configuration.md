@@ -55,8 +55,11 @@ Content-Type: text/csv,charset=windows-1252
 
 ![Alt text](img/businessservice-settings.png)
 
->BusinessProcess:**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab.
->ContentType:If the component is expected to work with only certain data type, you can specify this data type in the component settings
+>BusinessProcess:
+**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab  
+
+>ContentType:
+If the component is expected to work with only certain data type, you can specify this data type in the component settings
 
 If the client passed a stream with unknown or unsupported data type, the incoming message will be rejected and an error message will be written to the IRIS system event log.
 

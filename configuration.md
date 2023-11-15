@@ -52,15 +52,14 @@ Text data is expected to be transmitted in the UTF-8 encoding by default, but yo
 Content-Type: text/csv,charset=windows-1252  
 ```
 **FUME Settings**
-
 The component exposes the following main properties:
-
-![Alt text](img/businessservice-settings.png)
 
 |Property | Description |
 |---------|-------------|
 |BusinessProcess|**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams that come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab  |
 |ContentType|If the component is expected to work with only certain data type, you can specify this data type in the component settings
+
+![Alt text](img/businessservice-settings.png)
 
 In addition, the component exposes the following additional properties:
 
@@ -68,7 +67,7 @@ In addition, the component exposes the following additional properties:
 |---------|-------------|
 |Port|Specifies the TCP port to which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
 |Charset|Specifies the character encoding of incoming text streams. The default value is `UTF-8`. Normally, this setting value should never be changed.|
-If the client passes a stream with unknown or unsupported data type, the incoming message will be rejected, and an error message will be written to the IRIS system event log.
+If the client passes a stream with unknown or unsupported data type, the incoming message will be rejected, and an error message will be written to the IRIS system event log|
 
 If the message is successfully accepted, it will be written to the Production message log and then the message will be passed to the next Production component for processing. 
 

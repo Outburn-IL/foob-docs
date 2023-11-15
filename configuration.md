@@ -10,7 +10,7 @@
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 
 
-### Production component
+### Production settings
 
 The production contains the following properties:
 
@@ -28,9 +28,6 @@ To change the production value, do the following:
 * Click the `Apply` button to save changes
 
 Other important components of the production are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation` which are included in the IRIS FUME Plugin distribution. 
-
-Let us explore in detail how these components work and how they can be used to configure medical data transformations using InterSystems IRIS business process modelling tools.
-
 
 ### FumeBusinessService component
 

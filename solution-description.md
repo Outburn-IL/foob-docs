@@ -1,4 +1,4 @@
-## General solution description
+## Solution description
 
 The **InterSystems FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated **Outburn FUME Conversion engine**. 
 
@@ -29,8 +29,9 @@ The FUME conversion and transformation engine Community Edition can be downloade
 
 In addition, the free, **FUME Playground** free designer Sandbox [https://try.fume.health/] provides the capability for creating maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. Please use the following procedure for importing FUME Conversion maps created using Playground into the FUME Community Version
 
-> FUME maps export-import procedure:
-Here is coming procedure
+> FUME maps export-import procedure
+
+Here is the procedure
 
 > Dataflow
 

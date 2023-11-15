@@ -27,16 +27,16 @@ To change the production value, do the following:
 ![Alt text](img/production-settings.png)
 * Click the `Apply` button to save changes
 
-Other important components of the production are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation` which are included in the IRIS FUME Plugin distribution. 
+Other essential production components are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation`, which are included in the IRIS FUME Plugin distribution. 
 
 ### FumeBusinessService component
 
 This component is responsible for receiving and processing incoming data in HL7 v2, CSV, and JSON formats. 
 
 The component exposes a specific TCP port, which is specified in the settings of this component, and works as a HTTP/REST web service.
-The number of instances of components of the FumeBusinessService class can be any, but it is important that each component should listen a dedicated TCP-port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
+The number of instances of components of the FumeBusinessService class can be any, but it is important that each component should listen a dedicated TCP port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
 
-The component handles HTTP requests which Content-Type header contains one of the following values:
+The component handles HTTP requests in which the Content-Type header contains one of the following values:
 
 * `x-application/hl7-v2+er7` - if a message in HL7 v2 format should be processed
 * `application/json`, `text/json` - if a message in JSON format should be processed
@@ -52,7 +52,7 @@ Text data is expected to be transmitted in the UTF-8 encoding by default, but yo
 Content-Type: text/csv,charset=windows-1252  
 ```
 
-**IRIS FUME Plugin** comes with a very basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab.
+**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab.
 
 If the component is expected to work with only certain data type, you can specify this data type in the component settings (`FUME Settings` tab, field `Content Type`).
 

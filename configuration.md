@@ -66,7 +66,7 @@ If the client passes a stream with unknown or unsupported data type, the incomin
 
 If the message is successfully accepted, it will be written to the Production message log and then the message will be passed to the next Production component for processing. 
 
-In addition, the component exposes the following additional properties:
+In addition, the component exposes the following properties:
 
 |Property | Description |
 |---------|-------------|
@@ -91,22 +91,30 @@ To completely disable the FumeBusinessService component, just set its PoolSize p
 
 ### FumeTransformOperation component
 
-This component is responsible for the direct transformation of messages of types `FumeHL7Request`, `FumeCSVRequest` and `FumeJSONRequest` into HL7 FHIR format messages (Bundle or other resource types) using the FUME conversion engine.
+This component is responsible for the direct transformation of messages of types `FumeHL7Request`, `FumeCSVRequest,` and `FumeJSONRequest` into HL7 FHIR resources using the FUME conversion engine. 
 
-If the Production contains multiple instances of the component, all they will share the same FUME server as a medical data transformation service. The URL of FUME service endpoint is a property of Production. If you want to change the FUME service URL endpoint, please follow the instructions described in the chapter Production Component.
+The component uses the FUMEEnpoint setting available within the Production Settings to establish FUME REST Calls using predefined syntax supported by the FUME engine. If you'd like to change the FUME service URL endpoint, please follow the instructions included in the chapter Production Component. If the Production contains multiple instances of the component, all of them will share the same FUME server as a healthcare data transformation service.
 
-To configure the component, register a new business operation of type `FumeTransformOperation` in Production and then specify the following parameters:
+The solution comes with the preregistered instance of FumeTransformOperation capable of calling the FUME engine in the context of one conversion map only. 
+The single instance of the FumeTransformOperation exposes the following main settings:
+
+|Property | Description |
+|---------|-------------|
+| FUMEMap | Specify here the code of FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME router, which will try to pick a transformation rule for the incoming message on its own. Note that the code of the FUME conversion rule for the incoming message can also be defined in the Business Process Editor, which you can develop yourself.|
+|ContentType| Specifies the data format of incoming streams|
+
+![Alt text](img/businesprocess-fume-trasnform-settings.png)
+
+In addition, the component exposes the following properties:
 
 |Property | Description |
 |---------|-------------|
 | SSLConfig | Specify which SSL configuration should be used to call the FUME server | 
 | SSLCheckServerIdentity | This option should be disabled only in debugging mode if your FUME service instance is protected by a self-signed SSL certificate |
-| FUMEMap | Specify here the code of FUME transformation rule, which should be used to transform your data into HL7 FHIR format using FUME. You can learn more about FUME transformation rules at this link - https://www.fume.health. If this field is left blank, the incoming message will be passed to the internal FUME router which will try to pick a transformation rule for the incoming message on its own. Note that the code of the FUME conversion rule for the incoming message can also be defined in the Business Process Editor, which you can develop yourself.|
-|ContentType| Specifies the data format of incoming streams|
 
-The number of components of the `FumeTransformOperation` class can be any. It is handy if you are planning to use multiple FUME transformations using different mappings.
+The number of components of the `FumeTransformOperation` class can be any. It is handy if you plan to use multiple FUME transformations using different mappings.
 
-When the process of transforming an incoming message into the HL7 FHIR format is completed, the `FumeTransformOperation` component registers a new message of type `FumeTransformResponse` in the IRIS Messages journal.
+When transforming an incoming message into the HL7 FHIR format is completed, the `FumeTransformOperation` component registers a new message of type `FumeTransformResponse` in the IRIS Messages journal.
 
 If the transformation process is completed with an error, the component writes an error message to the IRIS event log.
 

@@ -51,29 +51,29 @@ Text data is expected to be transmitted in the UTF-8 encoding by default, but yo
 ```text
 Content-Type: text/csv,charset=windows-1252  
 ```
-**FUMEBusinessService Settings**
+**FUME Settings**
+
+The component exposes the following main properties:
 
 ![Alt text](img/businessservice-settings.png)
 
->BusinessProcess:
-**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams which come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab  
+|Property | Description |
+|---------|-------------|
+|BusinessProcess|**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams that come from the `FumeBusinessService` component – see the Business Process settings on the FUME Settings tab  |
+|ContentType|If the component is expected to work with only certain data type, you can specify this data type in the component settings
 
->ContentType:
-If the component is expected to work with only certain data type, you can specify this data type in the component settings
-
-If the client passed a stream with unknown or unsupported data type, the incoming message will be rejected and an error message will be written to the IRIS system event log.
-
-If the message was successfully accepted, it will be written to the Production message log and then the message will be passed to the next Production component for processing. 
-
-The `FumeHL7Request`, `FumeCSVRequest` and `FumeJSONRequest` message classes are used to transfer messages in HL7 v2, CSV and JSON formats within Production boundaries.
-
-The component exposes the following properties:
+In addition, the component exposes the following additional properties:
 
 |Property | Description |
 |---------|-------------|
-|Port|Specifies the TCP port which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
-|BusinessProcess|Specifies the name of a Business Process component to which the data streams should be redirected|
-|Charset|Specifies the character encoding of incoming text streams. Default value is `UTF-8`. Normally this setting value should never be changed.|
+|Port|Specifies the TCP port to which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
+|Charset|Specifies the character encoding of incoming text streams. The default value is `UTF-8`. Normally, this setting value should never be changed.|
+If the client passes a stream with unknown or unsupported data type, the incoming message will be rejected, and an error message will be written to the IRIS system event log.
+
+If the message is successfully accepted, it will be written to the Production message log and then the message will be passed to the next Production component for processing. 
+
+The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7 v2, CSV and JSON formats within Production boundaries.
+
 
 ### IRIS FUME plugin REST service
 

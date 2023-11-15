@@ -4,7 +4,11 @@ The **InterSystems FUME plugin** is a specialized IRIS production whose primary 
 
 The **FUME** is available in two versions: **Community and Enterprise**. The IRIS plugin supports both of them. The table below represents the main differences between them:
 
-
+|Feature | FUME Community | FUME Enterprise
+|---------|-------------|---------------|
+| Run transformations using RESTful API|V|V|
+| Full HL7v2 terminology dictionaries|V|V|
+|Use resources (Profiles, Extensions, ConceptMaps) stored on the FHIR® server|V|V|
 
 
 

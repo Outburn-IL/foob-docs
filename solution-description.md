@@ -36,7 +36,7 @@ Here is the procedure
 
 > Dataflow
 
-The high-level data-flow is represented in the diagram below:
+The high-level solution data-flow is represented in the diagram below:
 
 ![Alt text](img/Fume-plugin-dataflow.png)
 

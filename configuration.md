@@ -85,7 +85,7 @@ IRIS FUME plugin also provides a REST service which exposes the following endpoi
 
 In this example:
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
-* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. It is optional.
+* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* 
 
 These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
 

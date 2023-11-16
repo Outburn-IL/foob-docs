@@ -1,12 +1,13 @@
 ## Configuring IRIS FUME plugin
 
 - [Configuring IRIS FUME plugin](#configuring-iris-fume-plugin)
-  - [Production component](#production-component)
+  - [Production settings](#production-settings)
   - [FumeBusinessService component](#fumebusinessservice-component)
   - [IRIS FUME plugin REST service](#iris-fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
   - [Development and customization of Production business processes using IRIS FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
+  - [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 
 
@@ -174,6 +175,26 @@ For example, in the `Business Process` editor you can specify which FUME map sho
 
 If errors occur in the process of converting HL7 v2 format messages to FHIR format, they can be passed to another standard component that is responsible for receiving and storing erroneous HL7 ACK messages in the file system.
 
+### Applying FUME mappings to incoming data streams
+
+Each FUME Mapping transformation that is stored on the FUME server has a unique code.
+
+This is a very important parameter that allows the IRIS FUME Plugin business process to apply a certain transformation rule to the incoming data stream. 
+
+While configuring an IRIS business process, the code of the specific FUME Mapping can be set statically or dynamically.
+
+If such a code is specified statically, all incoming data streams will be transformed using a single and immutable FUME rule.
+
+In other scenarios, the client can pass the code of the required FUME Mapping externally, or the business process can be configured so that the code of the required FUME Mapping will be calculated during the execution of the business process.
+
+The following table lists all the ways using which you can map a FUME transformation rule to your input data stream:
+
+| Method | Type | Notes | 
+|---------|-------------|-----|
+|Pass FUME mapping code via HTTP REST request | Dynamic | Allows a client to apply a certain FUME mapping to an input data stream. Example: `POST http://iris.server/csp/healthshare/your-namespace/fume/rest/json/SomeFumeMap`|
+|Configure your business process| Static/Dynamic | Use the IRIS business process visual designer. A business process which coordinates IRIS FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`) can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)  |
+| Modify the `FumeTransformOperation.FUMEMap` property value using IRIS production designer |Static | Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams.|
+
 
 ## Configuring local IRIS FHIR server security
 
@@ -206,3 +227,5 @@ On the next step, FumeStoreOperation component properties should be adjusted to 
 ![Alt text](img/secured-fume-store-op.png)
 
 * Click the `Apply` button
+
+

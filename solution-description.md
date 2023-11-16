@@ -23,11 +23,11 @@ The **FUME** is available in two versions: **Community and Enterprise**. The tab
 |**Browse, open, edit, and save FUME mappings**|X|V|
 |**Mapping Designer** (GUI)|X|V|
 
-Visit the following page for the complete list of feature comparisons: [ https://outburn.co.il/discover-your-perfect-fume-match/]
+Visit the following page for the complete list of features comparison: [ https://outburn.co.il/discover-your-perfect-fume-match/]
 
 The FUME conversion and transformation engine Community Edition can be downloaded from the Outburn GitHub repository: [https://github.com/Outburn-IL/fume-community]
 
-In addition, the free, **FUME Playground** free designer Sandbox [https://try.fume.health/] allows creating maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. 
+In addition, it is possible to start your jorney into the FUME world from the free, **FUME Playground** designer Sandbox [https://try.fume.health/] allows creating FUME conversion maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. 
 Please use the following procedure for importing FUME Conversion maps created using Playground into the FUME Community Version.
 
 > FUME maps export-import procedure

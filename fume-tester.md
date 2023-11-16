@@ -8,7 +8,7 @@ The application is available at the following URL:
 
 Here, the {namespace} variable should match your namespace (e.g. /csp/healthshare/clinic1/fume/index.html)
 
-# The plugin comprised the following modules
+### The plugin comprised the following modules
 
 **FUME Designer**
 Link to the FUME designer (applicable for FUME Enterprise versions only).

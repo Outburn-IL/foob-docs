@@ -8,12 +8,12 @@ The application is available at the following URL:
 
 Here, the {namespace} variable should match your namespace (e.g. /csp/healthshare/clinic1/fume/index.html)
 
-### The plugin comprised the following modules
+The plugin comprised the following modules:
 
-**FUME Designer**
+### FUME Designer**
 Link to the FUME designer (applicable for FUME Enterprise versions only).
 
-**HL7v2 Routing Rules Editor**
+### HL7v2 Routing Rules Editor
 This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map
 The routing rules call the appropriate map based on the logical expressions for each of the source messages. The expression syntax is based on FLASH - FUME map language,  and provides broad flexibility to set any logical condition.  
 
@@ -21,7 +21,7 @@ The rule set is created once for each incoming source message type and can be re
 
 Before using the editor, you must develop and register a few FUME mappings using the FUME designer. 
 
-**To design a new HL7v2 routing rule:**
+**To design a new HL7v2 routing rule**
 
 ![IRIS FUME plugin routing rules editor](img/routing-rules-editor.png)
 
@@ -42,7 +42,7 @@ Before using the editor, you must develop and register a few FUME mappings using
 •	Modify rule settings (rule name, rule priority, rule expression and others)
 •	Click the `Save` button to apply changes
 
-## IRIS FUME Plugin HL7 conversion tester
+### IRIS FUME Plugin HL7 conversion tester
 
 This page allows a user to perform online testing of FUME HL7v2 mappings and IRIS FUME plugin HL7v2 routing rules.
 

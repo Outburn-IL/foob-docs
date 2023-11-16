@@ -1,4 +1,4 @@
-## IRIS FUME Plugin
+## Intersystems FUME Plugin
 
 User's reference
 
@@ -11,9 +11,6 @@ User's reference
 👆 [Installing IRIS FUME plugin](installation.md)
 
 👆 [Configuring IRIS FUME plugin](configuration.md)
-
-
-👆 [FUME designer](fume-designer.md)
 
 👆 [FUME HL7v2 routing rules editor](fume-tester.md)
 

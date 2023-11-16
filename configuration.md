@@ -105,7 +105,7 @@ The single instance of the FumeTransformOperation exposes the following main set
 
 |Property | Description |
 |---------|-------------|
-| FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME router (generally used for HL7 V2 transformation), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the IRIS FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation will be ignored.|
+| FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal [FUME router](#fume-tester.md) (generally used for HL7 V2 transformation), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the IRIS FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation will be ignored.|
 |ContentType| Specifies the data format of incoming streams|
 
 ![Alt text](img/businesprocess-fume-trasnform-settings.png)

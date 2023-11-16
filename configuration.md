@@ -105,7 +105,7 @@ The single instance of the FumeTransformOperation exposes the following main set
 
 |Property | Description |
 |---------|-------------|
-| FUMEMap | Specify here the code of FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME router, which will try to pick a transformation rule for the incoming message on its own. Note that the code of the FUME conversion rule for the incoming message can also be defined in the Business Process Editor, which you can develop yourself.|
+| FUMEMap | Specify here the code of FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME router, which will try to pick a transformation rule for the incoming message on its own. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over the REST service|
 |ContentType| Specifies the data format of incoming streams|
 
 ![Alt text](img/businesprocess-fume-trasnform-settings.png)

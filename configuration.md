@@ -86,7 +86,7 @@ IRIS FUME plugin also provides a REST service which exposes the following endpoi
 
 In this example:
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
-* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* 
+* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about mapping assignment rules)
 
 These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
 
@@ -177,17 +177,17 @@ If errors occur in the process of converting HL7 v2 format messages to FHIR form
 
 ### Applying FUME mappings to incoming data streams
 
-Each FUME Mapping transformation that is stored on the FUME server has a unique code.
+Each FUME Mapping transformation stored on the FUME server has a unique code.
 
-This is a very important parameter that allows the IRIS FUME Plugin business process to apply a certain transformation rule to the incoming data stream. 
+This crucial parameter allows the IRIS FUME Plugin business logic to apply a specific transformation rule to the incoming data stream. 
 
-While configuring an IRIS business process, the code of the specific FUME Mapping can be set statically or dynamically.
+While configuring an IRIS entire business process, the code of the specific FUME Mapping can be set statically or dynamically.
 
 If such a code is specified statically, all incoming data streams will be transformed using a single and immutable FUME rule.
 
 In other scenarios, the client can pass the code of the required FUME Mapping externally, or the business process can be configured so that the code of the required FUME Mapping will be calculated during the execution of the business process.
 
-The following table lists all the ways using which you can map a FUME transformation rule to your input data stream:
+The following table lists all options you can map a FUME transformation rule to your input data stream:
 
 | Method | Type | Notes | 
 |---------|-------------|-----|

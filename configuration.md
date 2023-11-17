@@ -107,7 +107,10 @@ The single instance of the FumeTransformOperation exposes the following main set
 |Property | Description |
 |---------|-------------|
 | FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME HL7v2 router (see IRIS FUME HL7v2 plugin page), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the IRIS FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
-|ContentType| Specifies the data format of incoming streams|
+|ContentType| Specifies the data format of incoming streams| 
+
+Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about mapping assignment rules
+
 
 ![Alt text](img/businesprocess-fume-trasnform-settings.png)
 
@@ -158,22 +161,24 @@ The component exposes the following additional properties:
 
 ### Development and customization of Production business processes using IRIS FUME Plugin components
 
-To develop the simplest products for converting your data in HL7 v2, CSV and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the 
- `Business Process` component which provides coordination of data flows, as shown on the picture:
+To develop the simplest products for converting your data in HL7 v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the 
+ `Business Process` component which provides coordination of data flows, as shown in the picture:
  
 ![Alt text](img/business-process.png)
 
-A component of type `FumeBusinessOperation` receives an incoming data stream, then routes data to a component of type `Business Process`. 
+A component of type `FumeBusinessOperation` receives an incoming data stream, and then routes data to a component of type `Business Process`. 
 
 A component of type `Business Process`  invokes a FUME transformation using a component of type `FumeTransformOperation` which does data transformations, then invokes another component of type `FumeStoreOperation` which submits an instance of FHIR resource to the IRIS FHIR server. 
 
-The `Business Process` editor provides the ability to fine-tune the rules of data transformation and routing. Here you can use not only FUME components but any other components and transformers which come with IRIS standard library. 
+The `Business Process` editor provides the ability to fine-tune the rules of data transformation and routing. Here you can use not only FUME components but any other components and transformers that come with IRIS standard library. 
 
 For example, in the `Business Process` editor you can specify which FUME map should be used for a specific data transformation using FUME:
 
 ![Alt text](img/transform.png)
 
 If errors occur in the process of converting HL7 v2 format messages to FHIR format, they can be passed to another standard component that is responsible for receiving and storing erroneous HL7 ACK messages in the file system.
+
+The default installation package is supplied with the default FumeBusinessProcess capable of calling single FumeTransformOperation, getting the transformation result (FHIR resource)  back, and calling FumeStoreOperation.
 
 ### Applying FUME mappings to incoming data streams
 

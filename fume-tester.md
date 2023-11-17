@@ -10,6 +10,8 @@ Here, the {namespace} variable should match your namespace (e.g. /csp/healthshar
 
 The plugin comprised the following modules:
 
+<> Comment
+
 ### FUME Designer**
 Link to the FUME designer (applicable for FUME Enterprise versions only).
 

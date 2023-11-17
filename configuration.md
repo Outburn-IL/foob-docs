@@ -86,7 +86,7 @@ IRIS FUME plugin also provides a REST service which exposes the following endpoi
 
 In this example:
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
-* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about mapping assignment rules)
+* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules)
 
 These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
 
@@ -109,7 +109,7 @@ The single instance of the FumeTransformOperation exposes the following main set
 | FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME HL7v2 router (see IRIS FUME HL7v2 plugin page), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the IRIS FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
 |ContentType| Specifies the data format of incoming streams| 
 
-Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about mapping assignment rules
+Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules
 
 
 ![Alt text](img/businesprocess-fume-trasnform-settings.png)

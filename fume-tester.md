@@ -14,18 +14,18 @@ The plugin comprised the following modules:
 Link to the FUME designer (applicable for FUME Enterprise versions only).
 
 ### HL7v2 Routing Rules Editor
-This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map
-The routing rules call the appropriate map based on the logical expressions for each of the source messages. The expression syntax is based on FLASH - FUME map language,  and provides broad flexibility to set any logical condition.  
+This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
+The routing rules call the appropriate map based on the logical expressions for each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition.  
 
 The rule set is created once for each incoming source message type and can be reused as often as needed.
 
-Before using the editor, you must develop and register a few FUME mappings using the FUME designer. 
+Before using the editor, you must develop and register a few FUME maps using the FUME designer. 
 
 **To design a new HL7v2 routing rule**
 
 ![IRIS FUME plugin routing rules editor](img/routing-rules-editor.png)
 
-* In the `Source data` text box, type or paste source HL7 v2 message from the clipboard, or load the message from your hard drive using the Load button. 
+* In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard or load the message from your hard drive using the Load button. 
 * Click the `Convert to JSON button` to transform your HL7 message to its JSON representation
 * In the `Rule name` text box, specify the name of the mapping rule
 * In the `Rule priority` text box, set a numeric value that specifies the rule priority for an algorithm that sorts rules. If a message matches several rules, the rule with the lowest priority value will be applied to transform the message

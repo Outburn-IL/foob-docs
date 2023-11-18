@@ -12,7 +12,7 @@ User's reference
 
 👆 [Configuring IRIS FUME plugin](configuration.md)
 
-👆 [FUME HL7v2 routing rules editor](fume-tester.md)
+👆 [FUME HL7v2 plugin](fume-tester.md)
 
 👆 [Troubleshooting IRIS FUME plugin](troubleshooting.md)
 

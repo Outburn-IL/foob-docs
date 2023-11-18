@@ -42,7 +42,7 @@ Before using the editor, you must develop and register a few FUME maps using the
 •	Modify rule settings (rule name, rule priority, rule expression and others)
 •	Click the `Save` button to apply changes
 
-[Applying FUME mappings to incoming data streams](https://github.com/Outburn-IL/foob-docs/edit/mainc/onfiguration.md#applying-fume-mappings-to-incoming-data-streams)
+[Applying FUME mappings to incoming data streams](/main/configuration.md#applying-fume-mappings-to-incoming-data-streams)
 
 ### IRIS FUME Plugin HL7 conversion tester
 

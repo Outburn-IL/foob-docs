@@ -32,14 +32,14 @@ Other essential production components are `FumeBusinessService`, `FumeTransformO
 
 ### FumeBusinessService component
 
-This component is responsible for receiving and processing incoming data in HL7 v2, CSV, and JSON formats. 
+This component is responsible for receiving and processing incoming data in HL7v2, CSV, and JSON formats. 
 
 The component exposes a specific TCP port, which is specified in the settings of this component, and works as a HTTP/REST web service.
 The number of instances of components of the FumeBusinessService class can be any, but it is important that each component should listen a dedicated TCP port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
 
 The component handles HTTP requests in which the Content-Type header contains one of the following values:
 
-* `x-application/hl7-v2+er7` - if a message in HL7 v2 format should be processed
+* `x-application/hl7-v2+er7` - if a message in HL7v2 format should be processed
 * `application/json`, `text/json` - if a message in JSON format should be processed
 * `text/csv` - if a message in CSV format should be handled
 
@@ -74,7 +74,7 @@ In addition, the component exposes the following properties:
 |Port|Specifies the TCP port to which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
 |Charset|Specifies the character encoding of incoming text streams. The default value is `UTF-8`. Normally, this setting value should never be changed.|
 
-The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7 v2, CSV and JSON formats within Production boundaries.
+The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7v2, CSV and JSON formats within Production boundaries.
 
 
 ### IRIS FUME plugin REST service
@@ -88,7 +88,7 @@ In this example:
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
 * The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. In case of usage,any other, FUME Conversion map related setting will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules)
 
-These endpoints accept incoming data in JSON, CSV, and HL7 v2 format, respectively, and then forward the data stream to FUME server. 
+These endpoints accept incoming data in JSON, CSV, and HL7v2 format, respectively, and then forward the data stream to FUME server. 
 
 For security reasons, we recommend using the REST service as the main service rather then the FumeBusinessService component. 
 
@@ -161,7 +161,7 @@ The component exposes the following additional properties:
 
 ### Development and customization of Production business processes using IRIS FUME Plugin components
 
-To develop the simplest products for converting your data in HL7 v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the 
+To develop the simplest products for converting your data in HL7v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the 
  `Business Process` component which provides coordination of data flows, as shown in the picture:
  
 ![Alt text](img/business-process.png)
@@ -178,7 +178,7 @@ For example, in the `Business Process Designer` you can specify which FUME map s
 
 Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules
 
-If errors occur in the process of converting HL7 v2 format messages to FHIR format, they can be passed to another standard component that is responsible for receiving and storing erroneous HL7 ACK messages in the file system.
+If errors occur in the process of converting HL7v2 format messages to FHIR format, they can be passed to another standard component that is responsible for receiving and storing erroneous HL7 ACK messages in the file system.
 
 The default installation package is supplied with the simple Business Process called FumeBusinessProcess capable of calling a single FumeTransformOperation, getting the transformation result (FHIR resource) back, and calling FumeStoreOperation.
 
@@ -207,8 +207,8 @@ Following is the list of  transformation scenarios in which the FUME Mapping ID 
   - If you do not make any changes to the `FumeBusimessProcess` configuration, and if you have exactly one `FumeTransformOperation` component registered in your Production, and if that component does not have the `FUMEMap` property populated, you can pass the identifier of the required FUME map via a REST service. In this case, the identifier of the FUME Mapping is passed to the business process dynamically.
   - If you want to register multiple components of type `FumeTransformOperation` (each must have the `FUMEMap` property value set), you'll need to modify the business process and configure the redirection of data flows to the required `FumeTransformOperation` component using the business process editor  
 2)  HL7v2 source message:
-  - By default, the built-in FUME HL7v2 plugin's FUME HL7v2 router works. The HL7 v2 router determines which FUME map should be used to transform a  HL7 message of a certain type.
-  - If you pass the FUME map externally via a REST service, then the HL7 v2 message will be converted using that FUME map. In this scenario, the HL7v2 router will be disabled.
+  - By default, the built-in FUME HL7v2 plugin's FUME HL7v2 router works. The HL7v2 router determines which FUME map should be used to transform a  HL7 message of a certain type.
+  - If you pass the FUME map externally via a REST service, then the HL7v2 message will be converted using that FUME map. In this scenario, the HL7v2 router will be disabled.
 
 
 ## Configuring local IRIS FHIR server security

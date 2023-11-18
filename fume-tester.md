@@ -96,5 +96,5 @@ To perform testing, follow these steps:
 * The transformation results will be displayed in the bottom pane of the page.
 
 ### Logs
-The log tab provides comprehensive logging for HL7v2 conversion related workflow
+The log tab provides a comprehensive log for HL7v2 conversion-related workflow.
 

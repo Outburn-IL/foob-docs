@@ -170,9 +170,9 @@ A component of type `FumeBusinessService` receives an incoming data stream and t
 
 A component of type `Business Process`  invokes a FUME transformation using a component of type `FumeTransformOperation`, which does data transformations, then invokes another component of type `FumeStoreOperation`, which submits an instance of FHIR resource to the FHIR server. 
 
-The `Business Process` editor provides the ability to fine-tune the rules of data transformation and routing. Here you can use not only FUME components but any other components and transformers that come with IRIS standard library. 
+The `Business Process Designer` provides the ability to fine-tune the rules of data transformation and routing. Here you can use not only FUME components but any other components and transformers that come with IRIS standard library. 
 
-For example, in the `Business Process` editor you can specify which FUME map should be used for a specific data transformation using FUME:
+For example, in the `Business Process Designer` you can specify which FUME map should be used for a specific data transformation using FUME:
 
 ![Alt text](img/transform.png)
 
@@ -196,11 +196,12 @@ In other scenarios, the client can pass the code of the required FUME Mapping ex
 
 The following table lists all options you can map a FUME transformation rule to your input data stream:
 
-| Method | Type | Notes | FUME Map settings |
+| Method | Type | Notes | Map configuration |
 |---------|-------------|-----|-----|
 |Pass FUME mapping code via HTTP REST request | Dynamic | Allows a client to apply a certain FUME mapping to an input data stream. Example: `POST http://iris.server/csp/healthshare/your-namespace/fume/rest/json/SomeFumeMap`|FumeBusinessProcess and FumeTrasnformOperation settings will be ignored| 
-|Configure your business process| Static/Dynamic | Use the IRIS business process visual designer. A business process that coordinates IRIS FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`) can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)  |
-| Modify the `FumeTransformOperation.FUMEMap` property value using IRIS production designer |Static | Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams.|
+|Configure your business process| Static/Dynamic | Use the IRIS business process visual designer. A business process that coordinates IRIS FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`) can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)  |FumeTransformOperation FUMEmap should remain empty|
+|Modify the `FumeTransformOperation.FUMEMap` property value using IRIS production designer |Static | Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams.|FUME map assignment for BPL component, calling the FumeTransformOperation should remain empty |
+|Use FUME HL7v2 rotuer|Dynamic|FUME map assignment is managed by FUME HL7v2 plugin.(Please refer to IRIS FUME HL7v2 plugin page)|FumeTransformOperation and Business Process FUME map settings should remain empty|
 
 
 ## Configuring local IRIS FHIR server security

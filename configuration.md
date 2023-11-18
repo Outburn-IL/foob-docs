@@ -205,7 +205,8 @@ Following is the list of  transformation scenarios in which the FUME Mapping ID 
 
 1) JSON or CSV source messages:
   - If you do not make any changes to the `FumeBusimessProcess` configuration, and if you have exactly one `FumeTransformOperation` component registered in your Production, and if that component does not have the `FUMEMap` property populated, you can pass the identifier of the required FUME map via a REST service. In this case, the identifier of the FUME Mapping is passed to the business process dynamically.
-  - If you want to register multiple components of type `FumeTransformOperation` (each must have the `FUMEMap` property value set), you'll need to modify the business process and configure the redirection of data flows to the required `FumeTransformOperation` component using the business process editor  
+  - If you want to register multiple components of type `FumeTransformOperation` (each must have the `FUMEMap` property value set), you'll need to modify the business process and configure the redirection of data flows to the required `FumeTransformOperation` component using the business process editor
+
 2)  HL7v2 source message:
   - By default, the built-in FUME HL7v2 plugin's FUME HL7v2 router works. The HL7v2 router determines which FUME map should be used to transform a  HL7 message of a certain type.
   - If you pass the FUME map externally via a REST service, then the HL7v2 message will be converted using that FUME map. In this scenario, the HL7v2 router will be disabled.

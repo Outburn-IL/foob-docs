@@ -15,12 +15,12 @@ Link to the FUME designer (applicable for FUME Enterprise versions only).
 
 ### HL7v2 Routing Rules Editor
 This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
-The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build expression which will uniquely identify the incoming message.
+The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build an expression uniquely identifying the incoming message.
 
 As an example, the following expression:   
 ```'MSH.SendingApplication.NamespaceID='VitalSignsDevice'```
 
-will use to identify the following HL7v2 message (MSH segment of the message represented in JSON format) 
+will be used to identify the following HL7v2 message (MSH segment of the message represented in JSON format) 
 ```
 {
   "MSH": {
@@ -94,3 +94,7 @@ To perform testing, follow these steps:
 * Paste the source HL7v2 message from the clipboard into the upper text box. Alternatively, click the `Load...` button to load the message from your hard disk
 * Click the `Convert` button to upload your test data to the IRIS server
 * The transformation results will be displayed in the bottom pane of the page.
+
+### Logs
+The log tab provides comprehensive logging for HL7v2 conversion related workflow
+

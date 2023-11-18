@@ -18,9 +18,11 @@ This module aimed to configure the **routing rules** between source HL7v2 messag
 The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build expression which will uniquely identify the incoming message.
 
 As an example, the following expression: 
-'MSH.SendingApplication.NamespaceID='VitalSignsDevice''
+```'MSH.SendingApplication.NamespaceID='VitalSignsDevice'```
 
-will identify the following HL7v2 message:
+will use to identify the following HL7v2 message:
+
+
 
 
 The rule set is created once for each incoming source message type and can be reused as often as needed.

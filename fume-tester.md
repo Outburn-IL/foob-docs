@@ -20,10 +20,39 @@ The routing rules call the appropriate map based on the logical expressions iden
 As an example, the following expression: 
 ```'MSH.SendingApplication.NamespaceID='VitalSignsDevice'```
 
-will use to identify the following HL7v2 message:
+will use to identify the following HL7v2 message (MSH segment of the message represented in JSON format) 
+```
+{
+  "MSH": {
+    "SegmentDescription": "Message Header",
+    "FieldSeparator": "|",
+    "EncodingCharacters": "^~\\&",
+    "SendingApplication": {
+      "NamespaceID": "VitalSignsDevice"
+    },
+    "SendingFacility": {
+      "NamespaceID": "Hospital1"
+    },
+    "ReceivingApplication": {
+      "NamespaceID": "IRIS"
+    },
+    "DateTimeOfMessage": {
+      "Time": "2023-04-04T20:45"
+    },
+    "MessageType": {
+      "MessageCode": "ORU",
+      "TriggerEvent": "R01"
+    },
+    "MessageControlID": "1c9cd454-c3e6-4537-9bfa-4e7b61ddea0a",
+    "ProcessingID": {
+      "ProcessingID": "P"
+    },
+    "VersionID": {
+      "VersionID": "2.5.1"
+    }
+  },
 
-
-
+```
 
 The rule set is created once for each incoming source message type and can be reused as often as needed.
 
@@ -49,6 +78,8 @@ Before using the editor, you must develop and register a few FUME maps using the
 •	Click the `Edit` button
 •	Modify rule settings (rule name, rule priority, rule expression, and others)
 •	Click the `Save` button to apply changes
+
+The IRIS business process should be configured as stated in the following section: 
 
 [Applying FUME mappings to incoming data streams](/configuration.md#applying-fume-mappings-to-incoming-data-streams)
 

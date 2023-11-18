@@ -17,7 +17,7 @@ Link to the FUME designer (applicable for FUME Enterprise versions only).
 This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
 The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build expression which will uniquely identify the incoming message.
 
-As an example, the following expression: 
+As an example, the following expression:   
 ```'MSH.SendingApplication.NamespaceID='VitalSignsDevice'```
 
 will use to identify the following HL7v2 message (MSH segment of the message represented in JSON format) 

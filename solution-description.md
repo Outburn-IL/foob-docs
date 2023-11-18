@@ -46,7 +46,7 @@ The  IRIS production accepts a message over the exposed REST endpoint (default m
 
 The InterSystems FUME plugin comprised the following main features and default components:
 
-1. **FUME Plugin ZPM package installer** supporting various platforms, implementation scenarios, and configuration options.
+1. [**FUME Plugin ZPM package installer**](installation.md) supporting various platforms, implementation scenarios, and configuration options.
 2. **FUME Plugin Rest Service** supporting source messages accepting in the following formats: JSON,CSV,HL7 V2.
 3. **FUMEBusinessService** HTTP Adapter based Business Service supporting source messages accepting  in the following formats: JSON,CSV,HL7 V2
 4. **FUMETransformOperation** Business Operation class allowing "One click" based  FUME integration and conversion map configuration from the Production           Configuration page. 

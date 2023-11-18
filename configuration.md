@@ -201,23 +201,23 @@ The following table lists all options you can map a FUME transformation rule to 
 |Modify the `FumeTransformOperation.FUMEMap` property |Static|Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams|FUME map assignment within the Business Process configuration,should remain empty|
 |Use FUME HL7v2 rotuer|Dynamic|FUME map assignment is managed by FUME HL7v2 plugin.(Please refer to IRIS FUME HL7v2 plugin page)|FumeTransformOperation and Business Process FUME map settings should remain empty|
 
-Let's list the data transformation scenarios in which the FUME Mapping ID can be specified statically or dynamically:
+Following is the list of  transformation scenarios in which the FUME Mapping ID can be specified statically or dynamically:
 
-1) For data in JSON or CSV format:
-  - If you do not make any changes to the `FumeBusimessProcess` configuration, and if you have exactly one `FumeTransformOperation` component registered in your Production, and if that component does not have the `FUMEMap` property populated, you can pass the identifier of the required FUME Mapping via a REST service. In this case, the identifier of the FUME Mapping is passed to the business process dynamically.
-  - If you want to register multiple components of type `FumeTransformOperation` (each must have the `FUME Mapping` property value set), you'll need to modify the business process and to configure the redirection of data flows to the required `FumeTransformOperation` component using the business process editor
-2) For data in HL7 v2 format:
-  - By default, the built-in FUME HL7 v2 router works. The HL7 v2 router determines which FUME Mapping should be used to transform a  HL7 message of a certain type.
-  - If you pass the FUME Mapping ID externally, via a REST service, then the HL7 v2 message will be converted using that FUME Mapping. The HL7 router will not work.
+1) JSON or CSV source messages:
+  - If you do not make any changes to the `FumeBusimessProcess` configuration, and if you have exactly one `FumeTransformOperation` component registered in your Production, and if that component does not have the `FUMEMap` property populated, you can pass the identifier of the required FUME map via a REST service. In this case, the identifier of the FUME Mapping is passed to the business process dynamically.
+  - If you want to register multiple components of type `FumeTransformOperation` (each must have the `FUMEMap` property value set), you'll need to modify the business process and configure the redirection of data flows to the required `FumeTransformOperation` component using the business process editor  
+2)  HL7v2 source message:
+  - By default, the built-in FUME HL7v2 plugin's FUME HL7v2 router works. The HL7 v2 router determines which FUME map should be used to transform a  HL7 message of a certain type.
+  - If you pass the FUME map externally via a REST service, then the HL7 v2 message will be converted using that FUME map. In this scenario, the HL7v2 router will be disabled.
 
 
 ## Configuring local IRIS FHIR server security
 
-If the plugin has been installed using ZPM installer and if a FHIR endpoint has been created by installer, please note that the newly created FHIR endpoint is not protected by HTTP security and allows unauthenticated users to access the endpoint.
+If the plugin has been installed using the ZPM installer and if an FHIR endpoint has been created by the installer, please note that the newly created FHIR endpoint is not protected by HTTP security and allows unauthenticated users to access the endpoint.
 
 To secure the FHIR endpoint, do the following:
 * In the IRIS portal main menu, click the `Home` > `Health` menu item
-*  On the `Management portal` page, select the namespace which your FHIR endpoint belongs to (e.g. `FUME`)
+*  On the `Management portal` page, select the namespace to which your FHIR endpoint belongs to (e.g. `FUME`)
 *  On the next page, click the `FHIR configuration` menu item and then click `Go` button
 *  On the `Intersystems FHIR` configuration page, click `Server configuration`
 *  On the `Server Configuration` page, select the endpoint you want to protect (e.g. /csp/healthshare/fume/fhir/r4) and expand the form

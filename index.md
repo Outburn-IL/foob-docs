@@ -1,10 +1,10 @@
-## Intersystems FUME Plugin
+## FUME Plugin
 
 User's reference
 
 ---
 
-👆 [About IRIS FUME plugin](about.md)
+👆 [About FUME plugin](about.md)
 
 👆 [General solution description](solution-description.md)
 

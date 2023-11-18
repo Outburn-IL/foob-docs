@@ -15,7 +15,13 @@ Link to the FUME designer (applicable for FUME Enterprise versions only).
 
 ### HL7v2 Routing Rules Editor
 This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
-The routing rules call the appropriate map based on the logical expressions for each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition.  
+The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build expression which will uniquely identify the incoming message.
+
+As an example, the following expression: 
+'MSH.SendingApplication.NamespaceID='VitalSignsDevice''
+
+will identify the following HL7v2 message:
+
 
 The rule set is created once for each incoming source message type and can be reused as often as needed.
 
@@ -39,7 +45,7 @@ Before using the editor, you must develop and register a few FUME maps using the
 * Navigate to a list of routing rules in the bottom part of the page
 * Select a rule you want to edit
 •	Click the `Edit` button
-•	Modify rule settings (rule name, rule priority, rule expression and others)
+•	Modify rule settings (rule name, rule priority, rule expression, and others)
 •	Click the `Save` button to apply changes
 
 [Applying FUME mappings to incoming data streams](/configuration.md#applying-fume-mappings-to-incoming-data-streams)

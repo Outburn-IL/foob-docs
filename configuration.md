@@ -1,12 +1,12 @@
 ## Configuring InterSystems IRIS and HealthShare Health Connect FUME plugin
 
-- [Configuring IRIS FUME plugin](#configuring-iris-fume-plugin)
+- [Configuring FUME plugin](#configuring-iris-fume-plugin)
   - [Production settings](#production-settings)
   - [FumeBusinessService component](#fumebusinessservice-component)
-  - [IRIS FUME plugin REST service](#iris-fume-plugin-rest-service)
+  - [FUME plugin REST service](#iris-fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
-  - [Development and customization of Production business processes using IRIS FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
+  - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
   - [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 
@@ -17,7 +17,7 @@ The production contains the following properties:
 
 |Property | Description |
 |---------|-------------|
-| FUMEEndpoint|Specifies the URL of the FUME server. If you used the IRIS FUME plugin installer to set up the package, that property's value should already be set.
+| FUMEEndpoint|Specifies the URL of the FUME server. If you used the FUME plugin installer to set up the package, that property's value should already be set.
 | FUMEDesignerUrl|Specifies the URL of the FUME designer (Valid for FUME enterprise versions only)|
 
 
@@ -28,7 +28,7 @@ To change the production value, do the following:
 ![Alt text](img/production-settings.png)
 * Click the `Apply` button to save changes
 
-Other essential production components are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation`, which are included in the IRIS FUME Plugin distribution. 
+Other essential production components are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation`, which are included in the FUME plugin distribution. 
 
 ### FumeBusinessService component
 
@@ -77,9 +77,9 @@ In addition, the component exposes the following properties:
 The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7v2, CSV and JSON formats within Production boundaries.
 
 
-### IRIS FUME plugin REST service
+### FUME plugin REST service
 
-IRIS FUME plugin also provides a REST service which exposes the following endpoints:
+FUME plugin also provides a REST service which exposes the following endpoints:
 - /csp/healthshare/{namespace}/rest/json/{fumeMap?}
 - /csp/healthshare/{namespace}/rest/csv/{fumeMap?}
 - /csp/healthshare/{namespace}/rest/hl7/{fumeMap?}
@@ -106,7 +106,7 @@ The single instance of the FumeTransformOperation exposes the following main set
 
 |Property | Description |
 |---------|-------------|
-| FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME HL7v2 router [see IRIS FUME HL7v2 plugin page](/fume-tester.md), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the IRIS FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
+| FUMEMap | Specify here the code of the FUME conversion map, which should be used to transform your data into the FHIR resource using FUME. If this field is left blank, the incoming message will be passed to the internal FUME HL7v2 router [see IRIS FUME HL7v2 plugin page](/fume-tester.md), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
 |ContentType| Specifies the data format of incoming streams| 
 
 Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules
@@ -159,7 +159,7 @@ The component exposes the following additional properties:
 | SSLCheckServerIdentity | This option should be disabled only in debugging mode, if your FHIR server instance is protected by a self-signed SSL certificate|
 
 
-### Development and customization of Production business processes using IRIS FUME Plugin components
+### Development and customization of Production business processes using FUME plugin components
 
 To develop the simplest products for converting your data in HL7v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the 
  `Business Process` component which provides coordination of data flows, as shown in the picture:
@@ -184,7 +184,7 @@ The default installation package is supplied with the simple Business Process ca
 
 ### Applying FUME mappings to incoming data streams
 
-Each FUME Mapping transformation stored on the FUME server has a unique code. This crucial parameter allows the IRIS FUME Plugin business logic to apply a specific transformation rule to each incoming data stream. 
+Each FUME Mapping transformation stored on the FUME server has a unique code. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
 
 While configuring an IRIS entire business process, the code of the specific FUME Mapping can be set statically or dynamically.
 
@@ -197,7 +197,7 @@ The following table lists all options you can map a FUME transformation rule to 
 |Method|Type|Notes|Map settings|
 |---------|-------------|-----|-----|
 |Pass FUME map code via HTTP REST request|Dynamic| Allows a client to apply a certain FUME mapping to an input data stream. Example: `POST http://iris.server/csp/healthshare/your-namespace/fume/rest/json/SomeFumeMap`|FumeBusinessProcess and FumeTrasnformOperation settings will be ignored| 
-|Business process configuration| Static/Dynamic|Use the IRIS business process visual designer. A business process that coordinates IRIS FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`) can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)|FumeTransformOperation.FUMEmap should remain empty|
+|Business process configuration| Static/Dynamic|Use the IRIS business process visual designer. A business process that coordinates FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`) can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)|FumeTransformOperation.FUMEmap should remain empty|
 |Modify the `FumeTransformOperation.FUMEMap` property |Static|Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams|FUME map assignment within the Business Process configuration,should remain empty|
 |Use FUME HL7v2 rotuer|Dynamic|FUME map assignment is managed by FUME HL7v2 plugin.[Please refer to IRIS FUME HL7v2 plugin page](fume-tester.md)|FumeTransformOperation and Business Process FUME map settings should remain empty|
 

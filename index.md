@@ -1,4 +1,4 @@
-## FUME Plugin
+## InterSystems IRIS and HealthShare Health Connect FUME Plugin
 
 User's reference
 

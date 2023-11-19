@@ -1,4 +1,4 @@
-## Troubleshooting IRIS FUME Plugin
+## Troubleshooting FUME Plugin
 
 IRIS provides convenient tools for debugging, monitoring and controlling data transformation flows. 
 To visualize the data transformation process, follow the steps below:

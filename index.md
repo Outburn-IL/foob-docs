@@ -8,13 +8,13 @@ User's reference
 
 👆 [General solution description](solution-description.md)
 
-👆 [Installing IRIS FUME plugin](installation.md)
+👆 [Installing FUME plugin](installation.md)
 
-👆 [Configuring IRIS FUME plugin](configuration.md)
+👆 [Configuring FUME plugin](configuration.md)
 
 👆 [FUME HL7v2 plugin](fume-tester.md)
 
-👆 [Troubleshooting IRIS FUME plugin](troubleshooting.md)
+👆 [Troubleshooting FUME plugin](troubleshooting.md)
 
 ---
 

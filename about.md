@@ -1,6 +1,6 @@
-# About FUME Plugin
+# About InterSystems IRIS and HealthShare Health Connect FUME Plugin
 
-**FUME Plugin** is a comprehensive solution, enabling InterSystems's IRIS and HealthShare Health Connect seamless integration capabilities with FUME, a powerful FHIR Converter by Outburn. The solution can efficiently convert JSON, HL7v2, and  CSV source messages to FHIR®, facilitating healthcare interoperability. 
+**InterSystems IRIS and HealthShare Health Connect FUME Plugin** is a comprehensive solution, enabling InterSystems's IRIS and HealthShare Health Connect seamless integration capabilities with FUME, a powerful FHIR Converter by Outburn. The solution can efficiently convert JSON, HL7v2, and  CSV source messages to FHIR®, facilitating healthcare interoperability. 
 
 > The solution is based on the following products: 
 

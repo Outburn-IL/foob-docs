@@ -1,4 +1,4 @@
-## Configuring IRIS FUME plugin
+## Configuring InterSystems IRIS and HealthShare Health Connect FUME plugin
 
 - [Configuring IRIS FUME plugin](#configuring-iris-fume-plugin)
   - [Production settings](#production-settings)

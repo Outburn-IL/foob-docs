@@ -1,7 +1,7 @@
-## IRIS FUME HL7v2 plugin
+## FUME HL7v2 plugin
 
 
-IRIS FUME HL7v2 plugin is a web application that runs on the InterSystems IRIS web server. The application allows users to design and test HL7v2 to FHIR conversion using IRIS FUME Plugin integrated with FUME.
+FUME HL7v2 plugin is a web application that runs on the InterSystems IRIS web server. The application allows users to design and test HL7v2 to FHIR conversion using FUME Plugin integrated with FUME.
 
 The application is available at the following URL:
 * /csp/healthshare/{namespace}/fume/index.html
@@ -61,7 +61,7 @@ Before using the editor, you must develop and register a few FUME maps using the
 
 **To design a new HL7v2 routing rule**
 
-![IRIS FUME plugin routing rules editor](img/routing-rules-editor.png)
+![FUME plugin routing rules editor](img/routing-rules-editor.png)
 
 * In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard or load the message from your hard drive using the Load button. 
 * Click the `Convert to JSON button` to transform your HL7 message to its JSON representation
@@ -84,9 +84,9 @@ The IRIS business process should be configured as stated in the following sectio
 
 [Applying FUME mappings to incoming data streams](/configuration.md#applying-fume-mappings-to-incoming-data-streams)
 
-### IRIS FUME Plugin HL7 conversion tester
+### FUME Plugin HL7 conversion tester
 
-This page allows a user to perform online testing of FUME HL7v2 mappings and IRIS FUME plugin HL7v2 routing rules.
+This page allows a user to perform online testing of FUME HL7v2 mappings and FUME plugin HL7v2 routing rules.
 
 ![Alt text](img/conversion-tester.png)
  

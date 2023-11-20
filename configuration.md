@@ -18,7 +18,7 @@ The production contains the following properties:
 |Property | Description |
 |---------|-------------|
 | FUMEEndpoint|Specifies the URL of the FUME server. If you used the FUME plugin installer to set up the package, that property's value should already be set.
-| FUMEDesignerUrl|Specifies the URL of the FUME designer (Valid for FUME enterprise versions only)|
+| FUMEDesignerUrl|Specifies the URL of the FUME designer (valid for FUME enterprise versions only)|
 
 
 To change the production value, do the following:

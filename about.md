@@ -21,7 +21,7 @@ Please visit the following website for further information about the FUME Conver
 
 *Functionality:*  The solution supports various data type conversions to FHIR using pre-defined IRIS classes, seamlessly integrated with FUME. The IRIS developer/integrator can build and adapt default solutions to the target workflow according to the business requirements. The solution includes an integrated Web-based UI, providing complete HL7 v2 to FHIR conversion workflow management.
 
-*Simplicity:* Minimum Object Script coding needs by developing integration-ready components and automatic solution deployment using a ZPM installer-based wizard adapted to various implementations on the customer site.
+*Simplicity:* Our solution includes integration-ready components and automatic solution deployment, using a ZPM installer-based wizard adapted to various implementations on the customer site. Together, they minimize Object Script coding knowledge requirements. 
 
 *Flexibility:* The solution can quickly adapt to any S2T workflow on the customer site, using pre-developed classes and UI-based configuration capabilities. 
 

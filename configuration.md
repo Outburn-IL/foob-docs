@@ -23,7 +23,7 @@ The production contains the following properties:
 
 To change the production value, do the following:
 * Open your production
-* Click the `Production settings`` link
+* Click the `Production settings` link
 * Find and modify the property value as follows:
 ![Alt text](img/production-settings.png)
 * Click the `Apply` button to save changes
@@ -35,17 +35,17 @@ Other essential production components are `FumeBusinessService`, `FumeTransformO
 This component is responsible for receiving and processing incoming data in HL7v2, CSV, and JSON formats. 
 
 The component exposes a specific TCP port, which is specified in the settings of this component, and works as a HTTP/REST web service.
-The number of instances of components of the FumeBusinessService class can be any, but it is important that each component should listen a dedicated TCP port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
+The number of component instances of the FumeBusinessService class can be any, but it is important that each component should listen to a dedicated TCP port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
 
 The component handles HTTP requests in which the Content-Type header contains one of the following values:
 
-* `x-application/hl7-v2+er7` - if a message in HL7v2 format should be processed
-* `application/json`, `text/json` - if a message in JSON format should be processed
-* `text/csv` - if a message in CSV format should be handled
+* `x-application/hl7-v2+er7` - for processing messages in HL7v2 format
+* `application/json`, `text/json` - for processing messages in JSON format
+* `text/csv` - for processing messages in CSV format
 
 If none of these values are provided, or if the value of `text/plain` is passed in the `Content-Type` HTTP header, the component will attempt to determine the actual data type of the incoming stream on its own.
 
-Text data is expected to be transmitted in the UTF-8 encoding by default, but you can specify a different encoding using the HTTP Content-Type header. 
+By default, text data is expected to be transmitted in UTF-8 encoding, but you may specify a different encoding using the HTTP Content-Type header. 
 
 **Example:**
 

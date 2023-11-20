@@ -6,18 +6,18 @@ FUME HL7v2 plugin is a web application that runs on the InterSystems IRIS web se
 The application is available at the following URL:
 * /csp/healthshare/{namespace}/fume/index.html
 
-Here, the {namespace} variable should match your namespace (e.g. /csp/healthshare/clinic1/fume/index.html)
+Here, the {namespace} variable should match your namespace (example for a full path, where namespace is "clinic1":   /csp/healthshare/clinic1/fume/index.html)
 
-The plugin comprised the following modules:
+The plugin is comprised of the following modules:
 
 ### FUME Designer
 Link to the FUME designer (applicable for FUME Enterprise versions only).
 
 ### HL7v2 Routing Rules Editor
-This module aimed to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
+This module is used to configure the **routing rules** between source HL7v2 messages and the FUME conversion map.
 The routing rules call the appropriate map based on the logical expressions identifying each source message. The expression syntax is based on the FLASH - FUME map language and provides broad flexibility for setting any logical condition. The target is to build an expression uniquely identifying the incoming message.
 
-As an example, the following expression: 
+For example, the following expression: 
 
 ```'MSH.SendingApplication.NamespaceID='VitalSignsDevice'```
 
@@ -63,7 +63,7 @@ Before using the editor, you must develop and register a few FUME maps using the
 
 ![FUME plugin routing rules editor](img/routing-rules-editor.png)
 
-* In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard or load the message from your hard drive using the Load button. 
+* In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard, or load the message from your hard drive using the Load button. 
 * Click the `Convert to JSON button` to transform your HL7 message to its JSON representation
 * In the `Rule name` text box, specify the name of the mapping rule
 * In the `Rule priority` text box, set a numeric value that specifies the rule priority for an algorithm that sorts rules. If a message matches several rules, the rule with the lowest priority value will be applied to transform the message
@@ -92,7 +92,7 @@ This page allows a user to perform online testing of FUME HL7v2 mappings and FUM
  
 To perform testing, follow these steps:
 * Click the `HL7 Conversion tester` main menu item
-* Paste the source HL7v2 message from the clipboard into the upper text box. Alternatively, click the `Load...` button to load the message from your hard disk
+* Paste the source HL7v2 message from the clipboard into the upper text box. Alternatively, click the `Load...` button to load the message from your hard drive
 * Click the `Convert` button to upload your test data to the IRIS server
 * The transformation results will be displayed in the bottom pane of the page.
 

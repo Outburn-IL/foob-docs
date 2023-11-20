@@ -2,15 +2,15 @@
 
 The **InterSystems IRIS and HealthShare Health Connect FUME plugin** is a specialized IRIS production whose primary goal is to effectively convert incoming messages in HL7 V2, CSV, and JSON formats to FHIR using a seamlessly integrated **Outburn FUME Conversion engine**. 
 
-The following sections will explore Intersystems FUME Plugin solution components, deployment methods, and high-level dataflow definition
+The following sections will explore Intersystems FUME Plugin solution components, deployment methods, and high-level dataflow definition.
 
 > FUME versions and components: 
 
 The  **FUME** architecture is comprised of the following components: 
-1. The **FUME mapping engine** is the core of the FUME FHIR® conversion and interoperability solution. The FUME engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR ConformanceResources resources. The FUME engine shall use the FHIR Server for managing ConformanceResources.We recommended using the IRIS FHIR Repository as a FUME backend; however, any FHIR Server can be used. The FUME Engine can be operated in Stateless mode with no FHIR Server; however, the FUME Plugin solution does not support it
+1. The **FUME mapping engine** is the core of the FUME FHIR® conversion and interoperability solution. The FUME engine runs as an API and uses the FHIR Server for storing and managing transformation maps as FHIR ConformanceResources resources. The FUME engine shall use the FHIR Server for managing ConformanceResources. We recommended using the IRIS FHIR Repository as a FUME backend; however, any FHIR Server can be used. The FUME Engine can be operated in Stateless mode with no FHIR Server; however, the FUME Plugin solution does not support it.
 2. The **FUME mapping designer** is a flexible and interactive FHIR® mapper providing the capability for creating and managing conversion maps.
 
-The **FUME** is available in two versions: **Community and Enterprise**. The table below represents the main differences between them:
+**FUME** is available in two versions: **Community and Enterprise**. The table below represents the main differences between them:
 
 |Feature | FUME Community | FUME Enterprise |
 |---------|-------------|---------------|
@@ -25,7 +25,7 @@ The **FUME** is available in two versions: **Community and Enterprise**. The tab
 
 Visit the following page for the complete list of [Features comparison](https://outburn.co.il/discover-your-perfect-fume-match)
 
-The FUME conversion and transformation engine Community Edition can be downloaded from the [Outburn GitHub repository](https://github.com/Outburn-IL/fume-community)
+FUME conversion and transformation engine Community Edition can be downloaded from the [Outburn GitHub repository](https://github.com/Outburn-IL/fume-community)
 
 In addition, it is possible to start your jorney into the FUME world from the free, [**FUME Playground** designer Sandbox](https://try.fume.health) allows creating FUME conversion maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. 
 Please use the following procedure for importing FUME Conversion maps created using Playground into the FUME Community Version.

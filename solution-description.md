@@ -32,8 +32,20 @@ For importing FUME Conversion maps created using Playground into the FUME Commun
 
 > FUME mapping export-import step-by-step instructions
 
-1. Once the FUME mapping is saved within the FUME Playground  
+1. Once the FUME mapping is saved within the FUME Playground, fetch the mapping resource using the following syntax: (<MappingID> = Mapping saved name)
+   ```
+   $resolve("StructureMap/<Mapping ID>")
+   ```
+2. Populate the FHIR server with the result using PUT operation
+   ```
+   PUT <FHIR Server URL>/StructureMap/<Mapping ID>
+   Content-Type: application/fhir+json
 
+   {MappingResource}
+   ``` 
+3. Make sure, the status HTTP 201 is returned by the server
+4. Restart the FUME process
+   
 > Dataflow
 
 The high-level solution data-flow is represented in the diagram below:

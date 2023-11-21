@@ -27,12 +27,12 @@ Visit the following page for the complete list of [Features comparison](https://
 
 FUME conversion and transformation engine Community Edition can be downloaded from the [Outburn GitHub repository](https://github.com/Outburn-IL/fume-community)
 
-In addition, it is possible to start your jorney into the FUME world for free - [**FUME Playground** designer Sandbox](https://try.fume.health) allows creating FUME conversion maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. 
+In addition, it is possible to start your journey into the FUME world for free - [**FUME Playground** designer Sandbox](https://try.fume.health) allows creating FUME conversion maps and moving them into the Community FUME for further usage of  **FUME mapping engine**. 
 For importing FUME Conversion maps created using Playground into the FUME Community Version, Please use the following procedure:
 
-> FUME maps export-import procedure
+> FUME mapping export-import step-by-step instructions
 
-Here is the procedure
+1. Once the FUME mapping is saved within the FUME Playground  
 
 > Dataflow
 

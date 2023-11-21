@@ -2,7 +2,7 @@
 
 User's reference
 
-[Watch the Video](https://www.youtube.com/watch?v=b5zrs12LD8E)
+[Watch A Plugin Demonstration Video](https://www.youtube.com/watch?v=b5zrs12LD8E)
 
 ---
 

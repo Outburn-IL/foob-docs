@@ -2,9 +2,9 @@
 
 The FUME Plugin installation is possible using ZPM (IPM) package manager.
 
-The installer supports different platforms and workflow scenarios, and can be adapted to new or existing IRIS implementations. Supported scenarios are:
+The installer supports different platforms and workflow scenarios and can be adapted to new or existing IRIS implementations. Supported scenarios are:
  -  Existing IRIS or HealthShare Health Connect with FHIR Repository
- -  Existing IRIS or HealthShare Health Connect  without FHIR Repository, when FHIR Repository is intended to be deployed as a part of the IRIS platform. 
+ -  Existing IRIS or HealthShare Health Connect  without FHIR Repository when FHIR Repository is intended to be deployed as a part of the IRIS platform. 
  -  Existing IRIS or HealthShare Health Connect with 3rd party FHIR Server
  -  New IRIS or HealthShare Health Connect installation
 
@@ -13,7 +13,7 @@ If ZPM is not installed on your server yet, install it according to the instruct
 > Prerequisites:
 1. Outburn FUME (Community or Enterprise edition) is installed on the server accessible by IRIS, and the FUME Rest API is exposed. 
    **!Important note!**  In case the FUME instance is supposed to use the new IRIS FHIR repository (which hasn't been created yet) as a Conformance Resource repository, our recommendation is to complete FUME configuration after the 3rd step of FUME Plugin installation. 
-2. install FUME   
+2. Install FUME   
 3. ZPM is installed on the target IRIS server.
 4. Target namespace and database were created (if required)
    
@@ -29,8 +29,8 @@ FUME>
 ```shell
 FUME> zpm
 ```
-5. On the next step, you have to switch ZPM to use the package registry: (in the following example, Outburn private registry is used. Yours will vary) 
-
+5. On the next step, you have to switch ZPM to use the package registry: (in the following example, Outburn private registry is used. Yours will vary)
+   
 ```shell
 zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.amazonaws.com:52773/registry/ -user **** -pass ****
 ```

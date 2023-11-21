@@ -3,7 +3,7 @@
 - [Configuring FUME plugin](#configuring-iris-fume-plugin)
   - [Production settings](#production-settings)
   - [FumeBusinessService component](#fumebusinessservice-component)
-  - [FUME plugin REST service](#iris-fume-plugin-rest-service)
+  - [FUME plugin REST service](#fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
   - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)

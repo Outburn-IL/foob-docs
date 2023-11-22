@@ -79,20 +79,23 @@ The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes ar
 
 ### FUME plugin REST service
 
-FUME plugin also provides a REST service which exposes the following endpoints:
-- /csp/healthshare/{namespace}/rest/json/{fumeMap?}
-- /csp/healthshare/{namespace}/rest/csv/{fumeMap?}
-- /csp/healthshare/{namespace}/rest/hl7/{fumeMap?}
+The FUME plugin also provides a REST service that exposes the following endpoints:
+- /csp/healthshare/{namespace}/fume/rest/json/{fumeMap?}
+- /csp/healthshare/{namespace}/fume/rest/csv/{fumeMap?}
+- /csp/healthshare/{namespace}/fume/rest/hl7/{fumeMap?}
 
-In this example:
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
-* The {fumeMap} variable specifies the FUME mapping identifier which should be used to transform data. *This is an optional paramter. If used, all other FUME Conversion map-related settings will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules)
+* The {fumeMap} variable specifies the FUME mapping identifier, which should be used to transform data. *This is an optional parameter. If used, all other FUME Conversion map-related settings will be ignored* (Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules)
+
+**Important Notes:**  
+1. Please add "/" to the end of the URL (e.g./csp/healthshare/fume/fume/rest/json/)
+2. By default, REST is secured by Basic Authentication. Please use your IRIS credential with appropriate permissions to access exposed REST services. 
 
 These endpoints accept incoming data in JSON, CSV, and HL7v2 format, respectively, and then forward the data stream to the FUME server. 
 
-For security reasons, we recommend using the REST service as the main service rather then the FumeBusinessService component. 
+For security reasons, we recommend using the REST service as the main service rather than the FumeBusinessService component. 
 
-To disable the FumeBusinessService component, just set its PoolSize property value to 0. Also you can completely remove that component from your production.
+To disable the FumeBusinessService component, just set its PoolSize property value to 0. Also, you can completely remove that component from your production.
 
 ### FumeTransformOperation component
 
@@ -106,7 +109,7 @@ The single instance of the FumeTransformOperation exposes the following main set
 
 |Property | Description |
 |---------|-------------|
-| FUMEMap | Here you will Specif the code of the FUME conversion map, which should be used to transform your data, via FUME, into the FHIR resource. If this field is left blank the incoming message will be passed to the internal FUME HL7v2 router [see IRIS FUME HL7v2 plugin page](/fume-tester.md), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
+| FUMEMap | Here you will specify the code of the FUME conversion map, which should be used to transform your data, via FUME, into the FHIR resource. If this field is left blank, the incoming message will be passed to the internal FUME HL7v2 router [see IRIS FUME HL7v2 plugin page](/fume-tester.md), which will try to pick a transformation rule for the incoming message. Note that the conversion FUME map defining the conversion rule for the incoming message can also be defined in the Business Process Editor or passed over to the FUME plugin REST service. In both cases, the FUMEMap setting within the FumeTransformOperation should remain blank|
 |ContentType| Specifies the data format of incoming streams| 
 
 Please refer to [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME map assignment rules

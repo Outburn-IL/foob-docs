@@ -17,7 +17,7 @@ If ZPM is not installed on your server yet, install it according to the instruct
 3. ZPM is installed on the target IRIS server.
 4. Target namespace and database were created (if required)
    
-> Installation procedure:
+> Installation / Upgrade procedure:
 1.	Open InterSystems IRIS for Health terminal
 2.	Authenticate yourself using your credentials
 3. switch the namespace to the target one where FUME Plugin will be installed
@@ -29,13 +29,13 @@ FUME>
 ```shell
 FUME> zpm
 ```
-5. On the next step, you have to switch ZPM to use the package registry: (in the following example, Outburn private registry is used. Yours will vary)
+5. On the next step, you have to switch ZPM to use the package registry: (in the following example, Outburn private registry is used. Yours will vary. To get credentials for the Outburn private registry, please send the request to **info@outburn.co.il**)
    
 ```shell
 zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.amazonaws.com:52773/registry/ -user **** -pass ****
 ```
 
-6.	Start installation
+6.	Start installation/upgrade
 
 ```shell
 zpm:FUME> install -dev iris-fume-plugin

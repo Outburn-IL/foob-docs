@@ -7,7 +7,7 @@
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
   - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-FUME-plugin-components)
-  - [Applying FUME mapping to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
+  - [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 
 
@@ -184,7 +184,7 @@ If errors occur in the process of converting HL7v2 format messages to FHIR forma
 
 The default installation package is supplied with the simple Business Process, named FumeBusinessProcess. It is capable of calling a single FumeTransformOperation, getting the transformation result (FHIR resource) back, and calling FumeStoreOperation.
 
-### Applying FUME mapping to incoming data streams
+### Applying FUME mappings to incoming data streams
 
 Each FUME mapping transformation stored on the FUME server has a unique code. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
 

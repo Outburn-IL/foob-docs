@@ -6,7 +6,7 @@
   - [FUME plugin REST service](#fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
-  - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components)
+  - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-FUME-plugin-components)
   - [Applying FUME mapping to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 

@@ -180,7 +180,7 @@ The default installation package is supplied with the simple Business Process, n
 
 ### Applying FUME mappings to incoming data streams
 
-Each FUME mapping transformation stored on the FUME server has a unique code. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
+Each FUME mapping transformation stored on the FUME server has a unique id. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
 
 While configuring an IRIS entire business process, the code of the specific FUME mapping can be set statically or dynamically.
 

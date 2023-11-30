@@ -77,7 +77,8 @@ The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes ar
 
 ### FUME plugin REST service
 
-The FUME plugin also provides a REST service that exposes the following endpoints:
+The FUME plugin defines a new Web Application that exposes the following REST endpoints:
+
 - /csp/healthshare/{namespace}/fume/rest/json/{fumeMap?}
 - /csp/healthshare/{namespace}/fume/rest/csv/{fumeMap?}
 - /csp/healthshare/{namespace}/fume/rest/hl7/{fumeMap?}
@@ -85,23 +86,18 @@ The FUME plugin also provides a REST service that exposes the following endpoint
 * The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
 * The {fumeMap} variable specifies the FUME mapping identifier, which should be used to transform data. *This is an optional parameter. If used, all other FUME Conversion map-related settings will be ignored* (Please refer to [Applying FUME mapping to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME mapping assignment rules)
 
-**Important Notes:**  
-1. Please add "/" to the end of the URL (e.g./csp/healthshare/fume/fume/rest/json/)
-2. By default, REST is secured by Basic Authentication. Please use your IRIS credential with appropriate permissions to access exposed REST services. 
+**Important Note:**  
+By default, REST is secured by Basic Authentication. Please use your IRIS credential with appropriate permissions to access exposed REST services. 
 
 These endpoints accept incoming data in JSON, CSV, and HL7v2 format, respectively, and then forward the data stream to the FUME server. 
-
-For security reasons, we recommend using the REST service as the main service rather than the FumeBusinessService component. 
-
-To disable the FumeBusinessService component, just set its PoolSize property value to 0. Also, you can completely remove that component from your production.
 
 ### FumeTransformOperation component
 
 This component is responsible for the direct transformation of messages of types `FumeHL7Request`, `FumeCSVRequest,` and `FumeJSONRequest` into HL7 FHIR resources using the FUME conversion engine. 
 
-The component uses the FUMEEnpoint setting available within the Production Settings to establish FUME REST Calls using predefined syntax supported by the FUME engine. If you'd like to change the FUME service URL endpoint, please follow the instructions included in the chapter Production Component. If the Production contains multiple instances of the component, all of them will share the same FUME server as a healthcare data transformation service.
+The component uses the **FUMEEnpoint** setting available within the *Production Settings* to establish FUME REST Calls using predefined syntax supported by the FUME engine. If you'd like to change the FUME service URL endpoint, please follow the instructions included in the chapter Production Component. If the Production contains multiple instances of the component, all of them will share the same FUME server as a healthcare data transformation service.
 
-The solution comes with the preregistered instance of FumeTransformOperation, capable of calling the FUME engine in the context of one conversion map only.  
+The solution comes with the pre-registered instance of FumeTransformOperation, capable of calling the FUME engine in the context of one conversion map only.  
 
 The single instance of the FumeTransformOperation exposes the following main settings:
 
@@ -122,9 +118,9 @@ In addition, the component exposes the following properties:
 | SSLConfig | Specifies which SSL configuration should be used to call the FUME server | 
 | SSLCheckServerIdentity | In debugging mode, if your FUME service instance is protected by a self-signed SSL certificate, This option should be disabled|
 
-You may use any numner of `FumeTransformOperation` class components. It is handy if you plan to use multiple FUME transformations using different mappings.
+You may add any number of `FumeTransformOperation` class components. It is handy if you plan to use multiple FUME transformations using different mappings and content types.
 
-When transformation an incoming message into the HL7 FHIR format is completed, the `FumeTransformOperation` component registers a new message of type `FumeTransformResponse` in the IRIS Messages journal.
+When the transformation of the incoming message into HL7 FHIR format is completed, the `FumeTransformOperation` component registers a new message of type `FumeTransformResponse` in the IRIS Messages journal.
 
 If the transformation process is completed with an error, the component writes an error message to the IRIS event log.
 
@@ -140,9 +136,9 @@ The `FumeStoreResponse` message has a `Location` property that contains the URL 
 
 In case of an error, the component writes an error message to the IRIS Messages log.
 
-In addition, the full protocol of data exchange with the FUME server will be also written to the IRIS Messages log.
+In addition, the full flow of data with the FUME server is also written in the IRIS Messages trace.
 
-To register the component, create a new Business Operation of type  `Outburn.Fume.NativeProduction.BusinessOperation.FumeStoreOperation` and give it any name (e.g. FumeStoreOperation)
+To add a new instance, add a new Business Operation of type  `Outburn.Fume.NativeProduction.BusinessOperation.FumeStoreOperation` and give it a new name (e.g. FumeStoreOperationNEW)
 
 The component exposes the following main properties:
 
@@ -162,7 +158,7 @@ The component exposes the following additional properties:
 
 ### Development and customization of Production business processes using FUME plugin components
 
-To develop the simplest products for converting your data from HL7v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or register additional business components. Let's look at the `Business Process` component, which provides coordination of data flows, as shown in the image below:
+To develop the simplest process for converting your data from HL7v2, CSV, and JSON formats into FHIR, the three components described above are sufficient. However, you can make your own changes to the proposed architecture and replace some components with others or add additional business components (e.g. Routers or Additional Business Operations). Let's look at the `Business Process` component, which provides coordination of data flows, as shown in the image below:
  
 ![Alt text](img/business-process.png)
 
@@ -172,7 +168,7 @@ A `Business Process` component invokes a FUME transformation using a `FumeTransf
 
 The `Business Process Designer` provides the ability to fine-tune the rules of data transformation and routing. Here you can use not only FUME components but any other components and transformers that come with the IRIS standard library. 
 
-For example, in the `Business Process Designer` you can specify which FUME mapping should be used for a specific data transformation using FUME:
+For example, in the `Business Process BPL` you can specify which FUME mapping should be used for a specific data transformation using FUME:
 
 ![Alt text](img/transform.png)
 

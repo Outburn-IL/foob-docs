@@ -180,13 +180,13 @@ The default installation package is supplied with the simple Business Process, n
 
 ### Applying FUME mappings to incoming data streams
 
-Each FUME mapping transformation stored on the FUME server has a unique id. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
+Each FUME mapping transformation stored on the FUME server has a unique identifier. This crucial parameter allows the FUME plugin business logic to apply a specific transformation rule to each incoming data stream. 
 
 While configuring an IRIS entire business process, the code of the specific FUME mapping can be set statically or dynamically.
 
-If such a code is specified statically, all incoming data streams will be transformed using a single and immutable FUME rule.
+If such an identifier is specified statically, all incoming data streams will be transformed using a single and immutable FUME rule.
 
-In other scenarios the client can pass the code of the required FUME mapping externally, or the business process can be configured so that the code of the required FUME mapping will be calculated during the execution of the business process.
+In other scenarios, the client can pass the code of the required FUME mapping externally, or the business process can be configured so that the code of the required FUME mapping will be calculated during the execution of the business process.
 
 The following table lists all the options available when mapping a FUME transformation rule to your input data stream:
 
@@ -194,7 +194,7 @@ The following table lists all the options available when mapping a FUME transfor
 |---------|-------------|-----|-----|
 |Pass FUME mapping code via HTTP REST request|Dynamic| Allows a client to apply a certain FUME mapping to an input data stream. Example: `POST http://iris.server/csp/healthshare/your-namespace/fume/rest/json/SomeFumeMap`|FumeBusinessProcess and FumeTrasnformOperation settings will be ignored| 
 |Business process configuration| Static/Dynamic|Use the IRIS business process visual designer. A business process that coordinates FUME plugin components interaction (`FumeBusinessService` and `FumeTransformOperation`). It can evaluate the code of a FUME mapping which should be applied to your data stream, and then pass that code to the `FumeTransformOperation` component (the latter is responsible for communication with FUME server)|FumeTransformOperation.FUMEmap should remain empty|
-|Modify the `FumeTransformOperation.FUMEMap` property |Static|Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams|FUME mapping assignment within the Business Process configuration,should remain empty|
+|Modify the `FumeTransformOperation.FUMEMap` property |Static|Select the `FumeTransformOperation` component in the Iris Production editor, then find the `FUMEMap` property, select the desired FUME transformation rule from the drop-down list, and, finally, save component settings. The selected rule will then be applied to all input data streams|FUME mapping assignment within the Business Process configuration, should remain empty|
 |Use FUME HL7v2 rotuer|Dynamic|FUME mapping assignment is managed by FUME HL7v2 plugin.[Please refer to IRIS FUME HL7v2 plugin page](fume-tester.md)|FumeTransformOperation and Business Process FUME mapping settings should remain empty|
 
 Following is the list of  transformation scenarios in which the FUME mapping ID can be specified statically or dynamically:

@@ -144,7 +144,7 @@ The component exposes the following main properties:
 
 |Property | Description |
 |---------|-------------|
-| FHIRHTTPService| The identifier of the External HTTP service which should be registered to communicate with a FHIR server|
+| FHIRHTTPService| The identifier of the External HTTP service which should be registered in the *Service Registry* (under Health->Service Registry) to communicate with a FHIR server|
 
 ![Alt text](img/businesprocess-fume-store-settings.png)
 

@@ -34,8 +34,7 @@ Other essential production components are `FumeBusinessService`, `FumeTransformO
 
 This component is responsible for receiving and processing incoming data in HL7v2, CSV, and JSON formats. 
 
-The component exposes a specific TCP port, which is specified in the settings of this component, and works as a HTTP/REST web service.
-The number of component instances of the FumeBusinessService class can be any, but it is important that each component should listen to a dedicated TCP port to avoid conflicts. Also, the TCP-port should not be blocked by a firewall.
+The component works as an HTTP service and can receive multiple requests simultaneously.  
 
 The component handles HTTP requests in which the Content-Type header contains one of the following values:
 
@@ -71,7 +70,6 @@ In addition, the component exposes the following properties:
 
 |Property | Description |
 |---------|-------------|
-|Port|Specifies the TCP port to which the component listens. If several FUME business services are in use, you have to assign a dedicated TCP port to each component|
 |Charset|Specifies the character encoding of incoming text streams. The default value is `UTF-8`. Normally, this setting value should never be changed.|
 
 The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7v2, CSV and JSON formats within Production boundaries.

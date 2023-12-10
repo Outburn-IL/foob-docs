@@ -58,7 +58,6 @@ The component exposes the following main properties:
 |Property | Description |
 |---------|-------------|
 |BusinessProcess|**FUME Plugin** comes with a basic business process implementation (see the `FumeBusinessProcess` component). If you have developed your custom Business processes, you can specify which one should process data streams that come from the `FumeBusinessService` component – see Business Process settings on the "FUME Settings" tab|
-|ContentType|If the component is expected to work with only a certain data type, you can specify this data type in the component settings|
 
 ![Alt text](img/businessservice-settings.png)
 

@@ -1,40 +1,31 @@
 ## Configuring InterSystems IRIS and HealthShare Health Connect FUME plugin
 
-- [Configuring FUME plugin](#configuring-iris-fume-plugin)
-  - [Production settings](#production-settings)
+- [Configuring InterSystems IRIS and HealthShare Health Connect FUME plugin](#configuring-intersystems-iris-and-healthshare-health-connect-fume-plugin)
+  - [FumeSettingsService component](#fumesettingsservice-component)
   - [FumeBusinessService component](#fumebusinessservice-component)
   - [FUME plugin REST service](#fume-plugin-rest-service)
   - [FumeTransformOperation component](#fumetransformoperation-component)
   - [FumeStoreOperation component](#fumestoreoperation-component)
-  - [Development and customization of Production business processes using FUME Plugin components](#development-and-customization-of-production-business-processes-using-FUME-plugin-components)
+  - [Development and customization of Production business processes using FUME plugin components](#development-and-customization-of-production-business-processes-using-fume-plugin-components)
   - [Applying FUME mappings to incoming data streams](#applying-fume-mappings-to-incoming-data-streams)
 - [Configuring local IRIS FHIR server security](#configuring-local-iris-fhir-server-security)
 
 
-### Production settings
+### FumeSettingsService component
 
-The production contains the following properties:
+The component contains the following properties which are used by other FUME production components: 
 
 |Property | Description |
 |---------|-------------|
 | FUMEEndpoint|Specifies the URL of the FUME server. If you used the FUME plugin installer to set up the package, that property's value should already be set.
 | FUMEDesignerUrl|Specifies the URL of the FUME designer (valid for FUME enterprise versions only)|
-
-
-To change the production value, do the following:
-* Open your production
-* Click the `Production settings` link
-* Find and modify the property value as follows:
-![Alt text](img/production-settings.png)
-* Click the `Apply` button to save changes
-
-Other essential production components are `FumeBusinessService`, `FumeTransformOperation` and `FumeStoreOperation`, which are included in the FUME plugin distribution. 
+ 
 
 ### FumeBusinessService component
 
 This component is responsible for receiving and processing incoming data in HL7v2, CSV, and JSON formats. 
 
-The component works as an HTTP service and can receive multiple requests simultaneously.  
+The component works as an HTTP service and can receive multiple requests simultaneously. If you want to stop this component serve HTTP request, set its `Pool Size` value to 0. 
 
 The component handles HTTP requests in which the Content-Type header contains one of the following values:
 
@@ -65,12 +56,6 @@ If the client passes a stream with an unknown or unsupported data type, the inco
 
 If the message is successfully accepted, it will be written to the Production message log and then the message will be passed to the next Production component for processing. 
 
-In addition, the component exposes the following properties:
-
-|Property | Description |
-|---------|-------------|
-|Charset|Specifies the character encoding of incoming text streams. The default value is `UTF-8`. Normally, this setting value should never be changed.|
-
 The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes are used to transfer messages in HL7v2, CSV and JSON formats within Production boundaries.
 
 
@@ -78,12 +63,13 @@ The `FumeHL7Request`, `FumeCSVRequest`, and `FumeJSONRequest` message classes ar
 
 The FUME plugin defines a new Web Application that exposes the following REST endpoints:
 
-- /csp/healthshare/{namespace}/fume/rest/json/{fumeMap?}
-- /csp/healthshare/{namespace}/fume/rest/csv/{fumeMap?}
-- /csp/healthshare/{namespace}/fume/rest/hl7/{fumeMap?}
+- `/csp/healthshare/:namespace/fume/rest/json/:fumeMap?`
+- `/csp/healthshare/:namespace/fume/rest/csv/:fumeMap?`
+- `/csp/healthshare/:namespace/fume/rest/hl7/:fumeMap?`
 
-* The {namespace} variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
-* The {fumeMap} variable specifies the FUME mapping identifier, which should be used to transform data. *This is an optional parameter. If used, all other FUME Conversion map-related settings will be ignored* (Please refer to [Applying FUME mapping to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME mapping assignment rules)
+The `:namespace` required URL path variable corresponds to your current namespace in IRIS for Health (e.g. "clinic1" etc)
+
+The `:fumeMap?` path variable specifies the FUME mapping identifier, which should be used to transform data. *This is an optional parameter. If used, all other FUME Conversion map-related settings will be ignored* (Please refer to [Applying FUME mapping to incoming data streams](#applying-fume-mappings-to-incoming-data-streams) section for extended information about FUME mapping assignment rules)
 
 **Important Note:**  
 By default, REST is secured by Basic Authentication. Please use your IRIS credential with appropriate permissions to access exposed REST services. 

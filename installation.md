@@ -20,7 +20,7 @@ If ZPM is not installed on your server yet, install it according to the instruct
 > Installation / Upgrade procedure:
 1.	Open InterSystems IRIS for Health terminal
 2.	Authenticate yourself using your credentials
-3. switch the namespace to the target one where FUME Plugin will be installed
+3. Switch the namespace to the target one where FUME Plugin will be installed
 ```shell
 %SYS> zn "FUME"
 FUME>
@@ -29,7 +29,7 @@ FUME>
 ```shell
 FUME> zpm
 ```
-5. On the next step, you have to switch ZPM to use the package registry: (in the following example, Outburn private registry is used. Yours will vary. To get credentials for the Outburn private registry, please send the request to **info@outburn.co.il**)
+5. On the next step, you have to switch ZPM to use the package registry. In the following example, Outburn private registry is used. Yours will vary. To get credentials for the Outburn private registry, please send the request to **info@outburn.co.il**:
    
 ```shell
 zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.amazonaws.com:52773/registry/ -user **** -pass ****
@@ -43,17 +43,17 @@ zpm:FUME> install -dev iris-fume-plugin
 
 > Installer Options
 1. Confirm or change the active namespace used for a Plugin installation.
-2. The installer will propose the new FHIR repository creation and configuration. Please confirm if required.
-3. The installer will propose a default endpoint. Please confirm or change. 
-4. Proivde FUME REST endpoint URL.
-5. Proivde FUME Designer URL.
-6. The installer will propose a default port for FumeBusinessService HTTP Adapter. Please confirm or change.
+2. If a running Production found, the installer will ask your confirmation to add new components to existing Production. Otherwise a new Production will be created.
+3. The installer will propose the new FHIR repository creation and configuration. Please confirm if required.
+4. The installer will propose a default endpoint. Please confirm or change. 
+5. Proivde FUME REST endpoint URL.
+6. Proivde FUME Designer URL.
 
 Installation Completed! 
 
 > Post-installation steps
 
-1. Check if a production with the name `Outburn.FumeNativeProduction.FumeProduction` exists. You should see the following:
+1. Check if IRIS FUME plugin components were added to your active production. You should see the following:
 
 ![Alt text](img/production.png)
  

@@ -82,12 +82,20 @@ The Routing Rules window will be opened.
  
 **To edit an existing HL7v2 routing rule:**
 
-![FUME plugin routing rules editor](img/routing-rules-edit.png)
+![FUME plugin routing rules editor](img/routing-rules-editor-edit.png)
 
-* Mark the target row to edit (do not check the checkbox)
+* Mark the target rule to edit (do not check the checkbox)
 •	Click the `Edit` button
 •	Modify rule settings (rule name, rule priority, rule expression, and others)
 •	Click the `Save` button to apply changes
+
+**To delete an existing HL7v2 routing rule:**
+
+![FUME plugin routing rules editor](img/routing-rules-editor-delete.png)
+
+* Check the target rule to delete 
+•	Click the `Delete` button
+
 
 The IRIS business process should be configured as stated in the following section: 
 

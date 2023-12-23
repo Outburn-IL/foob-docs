@@ -13,7 +13,7 @@
 
 ### FumeSettingsService component
 
-The component contains the following properties which are used by other FUME production components: 
+The component contains the following global properties, which are used by other FUME production components: 
 
 |Property | Description |
 |---------|-------------|

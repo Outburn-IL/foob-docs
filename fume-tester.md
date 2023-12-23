@@ -61,6 +61,11 @@ Before using the editor, you must develop and register a few FUME mappings using
 
 **To design a new HL7v2 routing rule**
 
+Navigate to HL7v2Routing Rules Editor and click on the `Create` button
+
+![FUME plugin routing rules editor](img/routing-rules-editor-create.png)
+
+
 ![FUME plugin routing rules editor](img/routing-rules-editor.png)
 
 * In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard or load the message from your hard drive using the Load button. 

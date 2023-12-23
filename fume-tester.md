@@ -94,7 +94,7 @@ The Routing Rules window will be opened.
 ![FUME plugin routing rules editor](img/routing-rules-editor-delete.png)
 
 * Check the target rule to delete     
-*	Click the `Delete` button  
+*	Click the `Delete Selected` button  
 
 
 The IRIS business process should be configured as stated in the following section: 

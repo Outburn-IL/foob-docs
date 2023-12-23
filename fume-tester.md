@@ -66,7 +66,7 @@ Navigate to HL7v2Routing Rules Editor and click on the `Create` button
 ![FUME plugin routing rules editor](img/routing-rules-editor-create.png)
 
 
-The Routing Rules window will be opened.
+The Routing Rule window will be opened.
 
 
 ![FUME plugin routing rules editor](img/routing-rules-editor.png)

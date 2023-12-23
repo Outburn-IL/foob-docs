@@ -66,6 +66,9 @@ Navigate to HL7v2Routing Rules Editor and click on the `Create` button
 ![FUME plugin routing rules editor](img/routing-rules-editor-create.png)
 
 
+The Routing Rules window will be opened.
+
+
 ![FUME plugin routing rules editor](img/routing-rules-editor.png)
 
 * In the `Source data` text box, type or paste the source HL7 v2 message from the clipboard or load the message from your hard drive using the Load button. 
@@ -79,8 +82,9 @@ Navigate to HL7v2Routing Rules Editor and click on the `Create` button
  
 **To edit an existing HL7v2 routing rule:**
 
-* Navigate to a list of routing rules in the bottom part of the page
-* Select a rule you want to edit
+![FUME plugin routing rules editor](img/routing-rules-edit.png)
+
+* Mark the target row to edit (do not check the checkbox)
 •	Click the `Edit` button
 •	Modify rule settings (rule name, rule priority, rule expression, and others)
 •	Click the `Save` button to apply changes

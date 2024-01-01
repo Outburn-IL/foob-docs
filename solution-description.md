@@ -60,7 +60,7 @@ The InterSystems FUME plugin comprised the following main features and default c
 
 1. [**FUME Plugin ZPM package installer**](installation.md) supports various platforms, implementation scenarios, and configuration options.
 2. [**FUME Plugin Rest Service**](configuration.md#iris-fume-plugin-rest-service) supports source messages accepting in the following formats: JSON,CSV,HL7 v2.
-3. [**FumeSettingsService component**](configuration.md#i#fumesettingsservice-component) contains FUME global settings needed for product functionality.
+3. [**FumeSettingsService component**](configuration.md#fumesettingsservice-component) contains FUME global settings needed for product functionality.
 4. [**FUMEBusinessService**](configuration.md#fumebusinessservice-component) HTTP Adapter-based Business Service supporting acception of source messages in the following formats: JSON,CSV,HL7 v2.
 5. [**FUMEBusinessProcess**](configuration.md#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components) allows entire solution workflow management according to the business requirements. The BP is capable of managing FUME conversion map calls in addition, or instead of FUMETransformOperation, registration of additional components, and coordination of the data flow. 
 6. [**FUMETransformOperation**](configuration.md#fumetransformoperation-component) Business Operation class allowing "One click" based FUME integration and conversion map configuration from the Production Configuration page. 

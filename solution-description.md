@@ -60,11 +60,12 @@ The InterSystems FUME plugin comprised the following main features and default c
 
 1. [**FUME Plugin ZPM package installer**](installation.md) supports various platforms, implementation scenarios, and configuration options.
 2. [**FUME Plugin Rest Service**](configuration.md#iris-fume-plugin-rest-service) supports source messages accepting in the following formats: JSON,CSV,HL7 v2.
-3. [**FUMEBusinessService**](configuration.md#fumebusinessservice-component) HTTP Adapter based Business Service supporting acception of source messages in the following formats: JSON,CSV,HL7 v2.
-4. [**FUMEBusinessProcess**](configuration.md#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components) allows entire solution workflow management according to the business requirements. The BP is capable of managing FUME conversion map calls in addition, or instead of FUMETransformOperation, registration of additional components, and coordination of the data flow. 
-5. [**FUMETransformOperation**](configuration.md#fumetransformoperation-component) Business Operation class allowing "One click" based FUME integration and conversion map configuration from the Production Configuration page. 
-6. [**FUMEStoreOperation**](configuration.md#fumestoreoperation-component) Business Operation class allows the interaction with the FHIR Server (internal IRIS FHIR  repository or external FHIR Server) and provides automatic REST call construction depending on the FHIR resource type/structure received from FUME. 
-7. [**FUME HL7v2 Web-based plugin**](fume-tester.md), allows HL7 v2 to FHIR conversion management by configuring specially designed, FUME-based routing rules
+3. [**FumeSettingsService component**](configuration.md#iris-fume-plugin-rest-service) keeps FUME global settings
+4. [**FUMEBusinessService**](configuration.md#fumebusinessservice-component) HTTP Adapter-based Business Service supporting acception of source messages in the following formats: JSON,CSV,HL7 v2.
+5. [**FUMEBusinessProcess**](configuration.md#development-and-customization-of-production-business-processes-using-iris-fume-plugin-components) allows entire solution workflow management according to the business requirements. The BP is capable of managing FUME conversion map calls in addition, or instead of FUMETransformOperation, registration of additional components, and coordination of the data flow. 
+6. [**FUMETransformOperation**](configuration.md#fumetransformoperation-component) Business Operation class allowing "One click" based FUME integration and conversion map configuration from the Production Configuration page. 
+7. [**FUMEStoreOperation**](configuration.md#fumestoreoperation-component) Business Operation class allows the interaction with the FHIR Server (internal IRIS FHIR  repository or external FHIR Server) and provides automatic REST call construction depending on the FHIR resource type/structure received from FUME. 
+8. [**FUME HL7v2 Web-based plugin**](fume-tester.md), allows HL7 v2 to FHIR conversion management by configuring specially designed, FUME-based routing rules
 
 
 

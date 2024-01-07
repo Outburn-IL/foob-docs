@@ -40,6 +40,7 @@ zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.
 ```shell
 zpm:FUME> install -dev iris-fume-plugin
 ```
+*Please refer to: https://github.com/intersystems/ipm/issues/434#issuecomment-1864512242 in case of the error: "Object open failed because 'Name' key value of 'iris-fume-plugin' was not found"*
 
 > Installer Options
 1. Confirm or change the active namespace used for a Plugin installation.

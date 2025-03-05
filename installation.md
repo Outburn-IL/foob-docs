@@ -32,7 +32,7 @@ FUME> zpm
 5. On the next step, you have to switch ZPM to use the package registry. In the following example, Outburn private registry is used. Yours will vary. To get credentials for the Outburn private registry, please send the request to **info@outburn.co.il**:
    
 ```shell
-zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.amazonaws.com:52773/registry/ -user zpmclient -pass zpmclient
+zpm:FUME> repo -r -n registry -url http://ec2-3-124-79-139.eu-central-1.compute.amazonaws.com:52773/registry/ -user <user> -pass <password>
 ```
 
 6.	Start installation/upgrade
